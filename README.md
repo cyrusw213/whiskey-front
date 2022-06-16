@@ -4,10 +4,10 @@ The Spirits Within
 ## Description & Features
 
 ## Collaborators
-Cyrus Wickersham - Release Manager, Back-End
-Marcus Hudnell - Back-End Lead
-Herivin Simmasalam - Front-End Lead
-Trevor Faivre - Product Manager, Front-End
+* Cyrus Wickersham - Release Manager, Back-End
+* Marcus Hudnell - Back-End Lead
+* Herivin Simmasalam - Front-End Lead
+* Trevor Faivre - Product Manager, Front-End
 
 ## Visuals
 add pictures after we get this puppy up and running

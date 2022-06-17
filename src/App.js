@@ -1,8 +1,10 @@
 import './App.css';
-import { auth } from './services/firebase'
-import {useState, useEffect} from 'react'
+import { auth } from './services/firebase';
+import {useState, useEffect} from 'react';
+import Welcome from './pages/Welcome';
 
 import Header from './components/Header';
+
 
 function App() {
   // State to control user 
@@ -17,6 +19,7 @@ useEffect(() => {
   
   return (
     <div className="App">
+      <Welcome />
       <Header user={user} />
     </div>
   );

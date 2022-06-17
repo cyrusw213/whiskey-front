@@ -9,13 +9,16 @@ const Header = (props) => {
                 <div>The Spirit Within</div>
             </Link>
             <ul>
+            
                 {
-                    props.user
+                   props.user
                         //   conditional rendering of login/logout based on user 
-                        ? <li onClick={logout}>Logout</li>
+                        ? <li onClick={logout}>Logout</li> 
+                        
                         :
                         <li onClick={login}>Login</li>
                 }
+              
             </ul>
 
         </nav>

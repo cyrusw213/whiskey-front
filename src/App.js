@@ -11,7 +11,7 @@ useEffect(() => {
   auth.onAuthStateChanged(user => (setUser(user)));
   // observes changes to the users login state
 })
-  
+//////////////////////////////////////////////////////////////
   
   
   

@@ -1,12 +1,15 @@
 import './App.css';
 import { auth } from './services/firebase';
 import {useState, useEffect} from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Welcome from './pages/Welcome';
 import Index from './components/Index'
 import Header from './components/Header';
-
-
+import Bourbon from './pages/Bourbon';
+import IrishWhiskey from './pages/IrishWhiskey';
+import Scotch from './pages/Scotch';
+import Rye from './pages/Rye';
+import American from './pages/American'
 
 function App() {
   // State to control user 
@@ -66,14 +69,30 @@ useEffect(() =>{getWhiskey()}, [])
   return (
     <div className="App">
      
-      <Header user={user} />
-      <Route exact path="/">
-      <Welcome  />
-      </Route>
-      <Route path="/all">
-      <Index url={URL}/>
-      </Route>
-   
+      <Header user={user}/>
+      <Switch>
+        <Route exact path="/">
+          <Welcome  />
+        </Route>
+        <Route path="/bourbon">
+          <Bourbon url={URL}/>
+        </Route>
+        <Route path="/rye">
+          <Rye url={URL}/>
+        </Route>
+        <Route path="/american">
+          <American url={URL}/>
+        </Route>
+        <Route path="/irish">
+          <IrishWhiskey url={URL}/>
+        </Route>
+        <Route path="/scotch">
+          <Scotch url={URL}/>
+        </Route>
+        <Route path="/all">
+          <Index url={URL}/>
+        </Route>
+      </Switch>
     </div>
   );
 };

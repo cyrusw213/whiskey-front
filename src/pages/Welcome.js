@@ -22,6 +22,7 @@ function Welcome() {
     return (
         <div>
         <h1>oi </h1>
+// <<<<<<< dropdown
         <div class="btn-group">
         <button
         type="button"
@@ -47,7 +48,17 @@ function Welcome() {
 
 
         
-        </div>
+// =======
+//         <select>
+//             <option value="bourbon">Bourbon</option>
+//             <option value="rye">Rye</option>
+//             <option value="american">American</option>
+//             <option value="irish">Irish</option>
+//             <option value="scotch">Scotch</option>
+//             <option value="all">Full Stock</option>
+//         </select>
+// >>>>>>> master
+//         </div>
     )
 }
 

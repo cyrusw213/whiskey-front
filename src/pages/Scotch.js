@@ -1,37 +1,47 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
 function Scotch(props) {
-
-  //create state to hold scotches
-  const [scotches, setScotches] = useState(null);
-
-  //create function to make api call
-  const getScotchesData = async () => {
+const [whiskey, setWhiskey] = useState(props.whiskey);
     
-    //make api call and get response
-    const response = await fetch(props.URL + "scotches");
+const getWhiskey = async () => {
+    const response = await fetch(props.url);
 
-    //turn response into javascript object
     const data = await response.json();
 
-    //set the scotches state to the data
-    setScotches(data);
+    setWhiskey(data);
+};
 
-  };
+useEffect(() => {
+    getWhiskey()
+    // eslint-disable-next-line
+}, []);
 
-  //make an initial call for the data inside a useEffect, so it only happens once on component load
-  useEffect(() => getScotchesData(), []);
-
-  // define a function that will return the JSX needed once we get the data
-  const loaded = () => {
-    return scotches.map((Scotch) => (
-      <div>
-        <img src={Scotch.photo} />
+const loaded = () => {
+    
+    const scotch =  whiskey.filter(drink => drink.Categories === "Scotch")
+    console.log(scotch)
+    return scotch.map((scotch, index) => (
+      <div key={index} className={scotch.Categories}>
+        <img src={scotch.Photo} alt={scotch.brand} />
+        <h3>{scotch.Name}</h3>
+        <h5>${scotch.Price}</h5>
       </div>
-    ));
+    ))
   };
-  
-  return scotches ? loaded() : <h1>Please Wait...</h1>;
-}
+return whiskey ? loaded() : <h2>Loading...</h2>
 
-export default Scotch
+};
+
+
+
+
+
+
+
+
+
+
+    
+     
+
+export default Scotch;

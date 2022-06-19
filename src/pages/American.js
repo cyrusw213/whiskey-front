@@ -1,37 +1,47 @@
-import React from 'react'
+import { useState, useEffect } from "react";
 
 function American(props) {
-
-  //create state to hold americans
-  const [ americans, setAmericans] = useState(null);
-
-  //create function to make api call
-  const getAmericansData = async () => {
+const [whiskey, setWhiskey] = useState(props.whiskey);
     
-    //make api call and get response
-    const response = await fetch(props.URL + "americans");
+const getWhiskey = async () => {
+    const response = await fetch(props.url);
 
-    //turn response into javascript object
     const data = await response.json();
 
-    //set the americans state to the data
-    setAmericans(data);
+    setWhiskey(data);
+};
 
-  };
+useEffect(() => {
+    getWhiskey()
+    // eslint-disable-next-line
+}, []);
 
-  //make an initial call for the data inside a useEffect, so it only happens once on component load
-  useEffect(() => getAmericansData(), []);
-
-  // define a function that will return the JSX needed once we get the data
-  const loaded = () => {
-    return americans.map((American) => (
-      <div>
-        <img src={American.photo} />
+const loaded = () => {
+    
+    const merican =  whiskey.filter(drink => drink.Categories === "American")
+    console.log(merican)
+    return merican.map((merican, index) => (
+      <div key={index} className={merican.Categories}>
+        <img src={merican.Photo} alt={merican.brand} />
+        <h3>{merican.Name}</h3>
+        <h5>${merican.Price}</h5>
       </div>
-    ));
+    ))
   };
-  
-  return americans ? loaded() : <h1>Please Wait...</h1>;
-}
+return whiskey ? loaded() : <h2>Loading...</h2>
 
-export default American
+};
+
+
+
+
+
+
+
+
+
+
+    
+     
+
+export default American;

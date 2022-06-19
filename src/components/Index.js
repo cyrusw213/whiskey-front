@@ -22,7 +22,7 @@ const loaded = () => {
         <div key={index} className={whiskey.Categories}>
             <img src={whiskey.Photo} alt={whiskey.brand} />
             <h3>{whiskey.Name}</h3>
-            <h5>{whiskey.Price}</h5>
+            <h5>${whiskey.Price}</h5>
         </div>
 
 

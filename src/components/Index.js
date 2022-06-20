@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom'
 
 function Index(props) {
 const [whiskey, setWhiskey] = useState(props.whiskey);
@@ -21,9 +22,11 @@ const loaded = () => {
     return whiskey.map((whiskey, index) => (
         <div key={index} className={whiskey.Categories}>
             <img src={whiskey.Photo} alt={whiskey.brand} />
-            <h3>{whiskey.Name}</h3>
-            <h5>${whiskey.Price}</h5>
+        <Link to={`/whiskey/${whiskey._id}`}><h3>{whiskey.Name}</h3> </Link> 
+            <h5>{whiskey.Price}</h5>
         </div>
+            
+            
 
 
 

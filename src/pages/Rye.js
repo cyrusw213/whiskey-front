@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import {Link} from 'react-router-dom'
 
 function Rye(props) {
 const [whiskey, setWhiskey] = useState(props.whiskey);

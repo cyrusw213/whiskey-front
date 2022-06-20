@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import {Link} from 'react-router-dom'
 
 function American(props) {
 const [whiskey, setWhiskey] = useState(props.whiskey);
@@ -23,7 +24,7 @@ const loaded = () => {
     return merican.map((merican, index) => (
       <div key={index} className={merican.Categories}>
         <img src={merican.Photo} alt={merican.brand} />
-        <h3>{merican.Name}</h3>
+        <Link to={`/whiskey/${merican._id}`}>  <h3>{merican.Name}</h3> </Link >
         <h5>${merican.Price}</h5>
       </div>
     ))

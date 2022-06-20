@@ -12,7 +12,7 @@ function Welcome() {
             { name: "American", path: "/american" },
             { name: "Irish", path: "/irish" },
             { name: "Scotch", path: "/scotch" },
-            { name: "Fulll Stock", path: "/all" },
+            { name: "Fulll Stock", path: "/whiskey" },
 
         ];
         setNavLinks(navs);

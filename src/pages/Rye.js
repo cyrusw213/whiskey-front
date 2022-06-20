@@ -24,7 +24,7 @@ const loaded = () => {
     return rye.map((rye, index) => (
       <div key={index} className={rye.Categories}>
         <img src={rye.Photo} alt={rye.brand} />
-        <h3>{rye.Name}</h3>
+        <Link to={`/whiskey/${rye._id}`}>  <h3>{rye.Name}</h3> </Link >
         <h5>${rye.Price}</h5>
       </div>
     ))

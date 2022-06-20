@@ -10,6 +10,7 @@ import IrishWhiskey from './pages/IrishWhiskey';
 import Scotch from './pages/Scotch';
 import Rye from './pages/Rye';
 import American from './pages/American'
+import Show from './pages/Show'
 
 function App() {
   // State to control user 
@@ -24,7 +25,9 @@ useEffect(() => {
   
 const [ whiskey, setWhiskey ] = useState(null);
 const URL = "https://whiskeywhiskey.herokuapp.com/all"
+// const URL = "http://localhost:4000/all"
 // request for whiskey json from heroku
+
 const getWhiskey = async () => {
     const response = await fetch(URL);
     const data = await response.json();
@@ -92,10 +95,17 @@ useEffect(() =>{getWhiskey()}, [])
         <Route path="/all">
           <Index url={URL}/>
         </Route>
-      </Switch>
+        <Route path="/whiskey/:id"
+              render= {(renderProps)=> (
+          <Show 
+          whiskey={whiskey}
+          {...renderProps}
+          />
+          )}
+          />
+     </Switch>
     </div>
   );
 };
  
-
 export default App;

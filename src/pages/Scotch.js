@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import {Link} from 'react-router-dom'
 
 function Scotch(props) {
 const [whiskey, setWhiskey] = useState(props.whiskey);
@@ -23,7 +24,7 @@ const loaded = () => {
     return scotch.map((scotch, index) => (
       <div key={index} className={scotch.Categories}>
         <img src={scotch.Photo} alt={scotch.brand} />
-        <h3>{scotch.Name}</h3>
+        <Link to={`/whiskey/${scotch._id}`}>  <h3>{scotch.Name}</h3> </Link>
         <h5>${scotch.Price}</h5>
       </div>
     ))

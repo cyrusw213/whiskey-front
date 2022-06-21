@@ -32,7 +32,7 @@ body {
     font-size: 40px;
     position: relative;
     display: inline-block;
-    padding-left: 22.5vw;
+    padding-right: 42.5vw;
     padding-top: 25vh;
     margin: 0 auto;
     /* -webkit-text-stroke: 5px rgba(150, 73, 2, .5);  */
@@ -101,6 +101,7 @@ body {
     font-family: 'sansita', italics;
     color: #E47610;
     font-size: 35px;
+    padding-right: 45vw;
     -webkit-text-stroke: 3px rgba(242, 122, 9, 0.55);
     /* border: none; */
    

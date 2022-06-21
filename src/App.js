@@ -1,4 +1,4 @@
-import './App.css';
+import './custom.css';
 import { auth } from './services/firebase';
 import {useState, useEffect} from 'react';
 import { Route, Switch } from 'react-router-dom';

@@ -12,7 +12,7 @@ function Welcome() {
             { name: "American", path: "/american" },
             { name: "Irish", path: "/irish" },
             { name: "Scotch", path: "/scotch" },
-            { name: "Fulll Stock", path: "/whiskey" },
+            { name: "Full Stock", path: "/whiskey" },
 
         ];
         setNavLinks(navs);
@@ -21,7 +21,7 @@ function Welcome() {
 
     return (
         <div>
-            <h1>Choose Your Spirit </h1>
+            <h1>The Spirit Within</h1>
 
             <div className="btn-group">
                 <button
@@ -31,7 +31,7 @@ function Welcome() {
                     data-bs-display="static"
                     aria-expanded="false"
                 >
-                    Select
+                    Spirits
                 </button>
                 <ul className="dropdown-menu dropdown-menu-end">
                     {navLinks.map((ele, index) => (

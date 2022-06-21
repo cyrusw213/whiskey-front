@@ -22,11 +22,18 @@ const loaded = () => {
     const bourb =  whiskey.filter(drink => drink.Categories === "Bourbon")
  
     return bourb.map((bourb, index) => (
-      <div key={index} className={bourb.Categories}>
-        <h1>Bourbons</h1>
-        <img src={bourb.Photo} alt={bourb.brand} />
-        <Link to={`/whiskey/${bourb._id}`}>  <h3>{bourb.Name}</h3> </Link>
-        <h5>${bourb.Price}</h5>
+      <div className="flex-container">
+         <div key={index} className={bourb.Categories}>
+        {/* <h1>Bourbons</h1> */}
+        <div className="bourbon-stack">
+        <img src={bourb.Photo} alt={bourb.brand} className="img-bourbon" />
+          <button className="link-bourbon">
+          <Link to={`/whiskey/${bourb._id}`}>  <h3 className="font"> {bourb.Name}</h3> </Link>
+          </button>
+        </div>
+        {/* <h5>${bourb.Price}</h5> */}
+        {/* {test Hervs Udate} */}
+      </div>
       </div>
     ))
   };

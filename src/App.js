@@ -14,18 +14,20 @@ import Show from './pages/Show'
 
 function App() {
   // State to control user 
-  const [user, setUser] = useState(null)
+  //const [user, setUser] = useState(null)
 useEffect(() => {
- const unsubscribe = auth.onAuthStateChanged(user => (setUser(user)));
+ //const unsubscribe = auth.onAuthStateChanged(user => (setUser(user)));
   // observes changes to the users login state
   return () => {
-    unsubscribe(); 
+   // unsubscribe(); 
   };
 }, []); 
   
 const [ whiskey, setWhiskey ] = useState(null);
-// const URL = "https://whiskeywhiskey.herokuapp.com/all"
-const URL = "http://localhost:4000/all"
+  
+const URL = "https://whiskeywhiskey.herokuapp.com/whiskey/"
+// const URL = "http://localhost:4000/all"
+
 // request for whiskey json from heroku
 
 const getWhiskey = async () => {
@@ -35,14 +37,14 @@ const getWhiskey = async () => {
 }
 
 // create function to create a new whiskey 
-const createWhiskey = async (whiskey) => {
+const createWhiskey = async (createdWhiskey) => {
 // make post request to create whiskey 
 await fetch(URL, {
   method: 'POST',
   headers: {
     "Content-Type": "Application/json",
   },
-  body: JSON.stringify(whiskey),
+  body: JSON.stringify(createdWhiskey),
 })
 ;
 // update list of whiskey
@@ -50,14 +52,14 @@ getWhiskey();
 };
 
 
-const updateWhiskey = async (whiskey, id) => {
+const updateWhiskey = async (updatedWhiskey, id) => {
     // make put request to create whiskey
     await fetch(URL + id, {
-      method: "PUT",
+      method: 'PUT',
       headers: {
         "Content-Type": "Application/json",
       },
-      body: JSON.stringify(whiskey),
+      body: JSON.stringify(updatedWhiskey),
     });
     // update list of people
     getWhiskey(); 
@@ -72,7 +74,7 @@ useEffect(() =>{getWhiskey()}, [])
   return (
     <div className="App">
      
-      <Header user={user}/>
+      <Header />
       <Switch>
         <Route exact path="/">
           <Welcome  />
@@ -92,14 +94,15 @@ useEffect(() =>{getWhiskey()}, [])
         <Route path="/scotch">
           <Scotch url={URL}/>
         </Route>
-        <Route path="/all">
+        <Route exact path="/whiskey">
           <Index url={URL}/>
         </Route>
         <Route path="/whiskey/:id"
               render= {(renderProps)=> (
           <Show 
-          whiskey={whiskey}
           {...renderProps}
+          whiskey={whiskey}
+          updateWhiskey={updateWhiskey}
           />
           )}
           />

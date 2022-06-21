@@ -24,8 +24,10 @@ useEffect(() => {
 }, []); 
   
 const [ whiskey, setWhiskey ] = useState(null);
+  
 const URL = "https://whiskeywhiskey.herokuapp.com/whiskey/"
 // const URL = "http://localhost:4000/all"
+
 // request for whiskey json from heroku
 
 const getWhiskey = async () => {

@@ -20,11 +20,12 @@ useEffect(() => {
 const loaded = () => {
     
     const rye =  whiskey.filter(drink => drink.Categories === "Rye")
-    console.log(rye)
     return rye.map((rye, index) => (
       <div key={index} className={rye.Categories}>
         <img src={rye.Photo} alt={rye.brand} />
-        <Link to={`/whiskey/${rye._id}`}>  <h3>{rye.Name}</h3> </Link >
+
+        <Link to={`/whiskey/${rye._id}`}>   <h3>{rye.Name}</h3> </Link>
+
         <h5>${rye.Price}</h5>
       </div>
     ))

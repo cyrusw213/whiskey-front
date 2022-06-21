@@ -43,6 +43,8 @@ const Show = (props) => {
                     placeholder="Rate from 1-5"
                     onChange={handleChange}
                     type="number"
+                    min="1"
+                    max="5"
                 />
                 <input type="submit" value="Update Rating" />
             </form>

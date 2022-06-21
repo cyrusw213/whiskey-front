@@ -15,7 +15,6 @@ const Show = (props) => {
             ...editForm,
             [e.target.name]: e.target.value
         })
-                })
     }
     //handle submit for form
     const handleSubmit = (e) => {

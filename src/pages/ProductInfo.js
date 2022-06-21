@@ -26,7 +26,7 @@ function ProductInfo(props) {
                 <h3>{productInfo.brand}</h3>
                 <h3>{productInfo.country}</h3>
                 <p>{productInfo.website}</p>
-                //
+                
 
             </div>
         ));

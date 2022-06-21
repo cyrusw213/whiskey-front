@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 
 function Index(props) {
 const [whiskey, setWhiskey] = useState(props.whiskey);
-    
+const FavoriteComponent = props.favoriteComponent;  
+
 const getWhiskey = async () => {
     const response = await fetch(props.url);
 
@@ -23,7 +24,11 @@ const loaded = () => {
         <div key={index} className={whiskey.Categories}>
             <img src={whiskey.Photo} alt={whiskey.brand} />
         <Link to={`/whiskey/${whiskey._id}`}><h3>{whiskey.Name}</h3> </Link> 
-            <h5>{whiskey.Price}</h5>
+           <div id='favorites-link' onClick={ () => props.handleFavoritesClick(whiskey)}>
+            <FavoriteComponent  />
+            </div>
+           
+
         </div>
             
             

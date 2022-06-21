@@ -17,12 +17,16 @@ import Scotch from './pages/Scotch';
 import Rye from './pages/Rye';
 import American from './pages/American'
 import Show from './pages/Show'
+import AddFavorite from './components/AddFavorite';
+import Favorite from './pages/Favorite';
 
 
 
 
 function App() {
  
+  const [ whiskey, setWhiskey ] = useState(null);
+  const [favorites, setFavorites] = useState([]);
   // State to control user 
   //const [user, setUser] = useState(null)
     useEffect(() => {
@@ -33,7 +37,6 @@ function App() {
         //};
       }, []); 
       
-      const [ whiskey, setWhiskey ] = useState(null);
       
       const URL = "https://whiskeywhiskey.herokuapp.com/whiskey/"
       // const URL = "http://localhost:4000/all"
@@ -77,7 +80,10 @@ function App() {
       
       useEffect(() =>{getWhiskey()}, [])
       
-      
+      const addFavoriteWhiskey = (whiskey) => {
+        const newFavoriteList = [...favorites, whiskey];
+        setFavorites(newFavoriteList);
+      }
       
   
   
@@ -105,7 +111,11 @@ function App() {
           <Scotch url={URL}/>
         </Route>
         <Route exact path="/whiskey">
-          <Index url={URL}/>
+          <Index 
+                  whiskey={whiskey}
+                  handleFavoritesClick={addFavoriteWhiskey}
+                  url={URL}
+                  favoriteComponent={AddFavorite}/>
         </Route>
         <Route path="/whiskey/:id"
               render= {(renderProps)=> (
@@ -116,6 +126,7 @@ function App() {
           />
           )}
           />
+          <Favorite />
      </Switch>
     </div>
   );

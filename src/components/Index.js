@@ -17,7 +17,7 @@ useEffect(() => {
     // eslint-disable-next-line
 }, []);
 
-const loaded = () => {
+const loaded = ({ favorites, setFavorites}) => {
     
     return whiskey.map((whiskey, index) => (
         <div key={index} className={whiskey.Categories}>

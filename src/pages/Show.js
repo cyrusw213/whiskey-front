@@ -5,7 +5,7 @@ import ProductInfo from './ProductInfo.js'
 const Show = (props) => {
     const id = props.match.params.id;
     const drink = props?.whiskey?.find(p => p._id === id);
-
+    const FavComp = props.favComp
     //state for form
     const [editForm, setEditForm] = useState(drink);
 
@@ -53,6 +53,7 @@ const Show = (props) => {
                 />
                 <input type="submit" value="Update Rating" />
             </form>
+            <FavComp />
         </div>
 
     )

@@ -17,9 +17,8 @@ import Scotch from './pages/Scotch';
 import Rye from './pages/Rye';
 import American from './pages/American'
 import Show from './pages/Show'
-
-
-
+import Favorite from './pages/Favorite';
+import AddFav from './components/AddFav';
 
 function App() {
  
@@ -34,7 +33,7 @@ function App() {
       }, []); 
       
       const [ whiskey, setWhiskey ] = useState(null);
-      
+      const [ favorites, setFavorites ] = useState([])
       const URL = "https://whiskeywhiskey.herokuapp.com/whiskey/"
       // const URL = "http://localhost:4000/all"
       
@@ -104,8 +103,11 @@ function App() {
         <Route path="/scotch">
           <Scotch url={URL}/>
         </Route>
+        <Route path="/favorites">
+          <Favorite url={URL}/>
+        </Route>
         <Route exact path="/whiskey">
-          <Index url={URL}/>
+          <Index url={URL} favorites={favorites} setFavorites={setFavorites}/>
         </Route>
         <Route path="/whiskey/:id"
               render= {(renderProps)=> (
@@ -113,6 +115,7 @@ function App() {
           {...renderProps}
           whiskey={whiskey}
           updateWhiskey={updateWhiskey}
+          favComp = { AddFav }
           />
           )}
           />

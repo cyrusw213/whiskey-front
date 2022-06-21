@@ -38,11 +38,11 @@ const Show = (props) => {
             <h5>Rating: {drink.Rating}</h5>
             <form onSubmit={handleSubmit}>
                 <input
-                    name="rating"
-                    value={editForm.rating}
+                    name="Rating"
+                    value={editForm.Rating}
                     placeholder="Rate from 1-5"
                     onChange={handleChange}
-                    type="text"
+                    type="number"
                 />
                 <input type="submit" value="Update Rating" />
             </form>

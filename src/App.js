@@ -18,9 +18,9 @@ function App() {
 useEffect(() => {
  //const unsubscribe = auth.onAuthStateChanged(user => (setUser(user)));
   // observes changes to the users login state
-  return () => {
+  //return () => {
    // unsubscribe(); 
-  };
+  //};
 }, []); 
   
 const [ whiskey, setWhiskey ] = useState(null);

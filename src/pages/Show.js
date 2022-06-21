@@ -20,8 +20,8 @@ const Show = (props) => {
     //handle submit for form
     const handleSubmit = (e) => {
         e.preventDefault();
-        const { rating, _id } = editForm
-        props.updateWhiskey({ rating }, _id);
+        const { Rating, _id } = editForm;
+        props.updateWhiskey({ Rating }, _id);
         //redirect people back to index
     }
 

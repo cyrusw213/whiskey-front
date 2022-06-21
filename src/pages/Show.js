@@ -13,7 +13,8 @@ const Show = (props) => {
     const handleChange = (e) => {
         setEditForm({
             ...editForm,
-            ["Rating"]: e.target.value
+            [e.target.name]: e.target.value
+        })
                 })
     }
     //handle submit for form
@@ -28,15 +29,18 @@ const Show = (props) => {
         <div className="show">
             <h1> {drink.Brand}</h1>
             <img src={drink.Photo} alt={drink.Name} />
-            <h3>{drink.Name} ${drink.Price}</h3>
-            <h5>Your Rating ( Out of five ): {drink.Rating}</h5>
+            <h2>Name: {drink.Name}</h2>
+            <h4>Price: ${drink.Price}</h4>
+            <h4>Origin: {drink.Country}</h4>
+            <h4>Website: {drink.Website}</h4>
+            <h5>Rating: {drink.Rating}</h5>
             <form onSubmit={handleSubmit}>
-                <input 
-                name="Rating"
-                value={editForm.Rating}
-                placeholder="Rate from 1-5"
-                onChange={handleChange}
-                type="number"
+                <input
+                    name="rating"
+                    value={editForm.rating}
+                    placeholder="Rate from 1-5"
+                    onChange={handleChange}
+                    type="text"
                 />
                 <input type="submit" value="Update Rating"/>
             </form>

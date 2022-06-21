@@ -18,12 +18,12 @@ function App() {
 useEffect(() => {
  //const unsubscribe = auth.onAuthStateChanged(user => (setUser(user)));
   // observes changes to the users login state
-  return () => {
+  //return () => {
    // unsubscribe(); 
-  };
+  //};
 }, []); 
   
-const [ whiskey, setWhiskey ] = useState(null);
+const [ whiskey, setWhiskey ] = useState("");
 const URL = "https://whiskeywhiskey.herokuapp.com/whiskey/"
 // const URL = "http://localhost:4000/all"
 // request for whiskey json from heroku

@@ -11,15 +11,16 @@ const Show = (props) => {
 
     //handle change function for form
     const handleChange = (e) => {
-        setEditForm({ ...editForm,
-                    [e.target.name]: e.target.value
+        setEditForm({
+            ...editForm,
+            ["Rating"]: e.target.value
                 })
     }
     //handle submit for form
     const handleSubmit = (e) => {
         e.preventDefault();
-        const { rating, _id } = editForm
-        props.updateWhiskey({ rating }, _id);
+        const { Rating, _id } = editForm;
+        props.updateWhiskey({ Rating }, _id);
         //redirect people back to index
     }
 
@@ -28,14 +29,14 @@ const Show = (props) => {
             <h1> {drink.Brand}</h1>
             <img src={drink.Photo} alt={drink.Name} />
             <h3>{drink.Name} ${drink.Price}</h3>
-            <h5>{drink.Rating}</h5>
+            <h5>Your Rating ( Out of five ): {drink.Rating}</h5>
             <form onSubmit={handleSubmit}>
                 <input 
-                name="rating"
-                value={editForm.rating}
+                name="Rating"
+                value={editForm.Rating}
                 placeholder="Rate from 1-5"
                 onChange={handleChange}
-                type="text"
+                type="number"
                 />
                 <input type="submit" value="Update Rating"/>
             </form>

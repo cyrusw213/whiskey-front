@@ -1,5 +1,5 @@
 import './style/App.css';
-import './style/custom.css'
+////import './style/custom.css'
 import './style/bourbon.css';
 import './style/rye.css';
 import './style/american.css';

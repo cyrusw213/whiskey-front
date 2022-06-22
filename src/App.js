@@ -40,6 +40,9 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    setFavorites(favorites)
+  }, [favorites])
 
   const URL = "https://whiskeywhiskey.herokuapp.com/whiskey/"
   // const URL = "http://localhost:4000/all"
@@ -138,8 +141,10 @@ function App() {
           )}
         />
         <Route path="/favorites">
-          <Favorite whiskey={favorites}
-            user={user} />
+          <Favorite
+              whiskey={favorites}
+              user={user} 
+              />
         </Route>
       {/* </Switch> */}
     </div>

@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 
 
 
 function Favorites(props) {
-    
+
+    const [favorite, setFavorite] = useState(props.Favorites)
+    console.log(props.whiskey)
+
     return (
         <div className="favorites">
 

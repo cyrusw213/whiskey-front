@@ -24,11 +24,33 @@ const getWhiskey = async () => {
     return whiskey.map((whiskey, index) => (
       <div className="flex-container">
         <div key={index} className={whiskey.Categories}>
-            <img src={whiskey.Photo} alt={whiskey.brand} />
-        <Link to={`/whiskey/${whiskey._id}`}><h3>{whiskey.Name}</h3> </Link> 
-           <div id='favorites-link' onClick={ () => props.handleFavoritesClick(whiskey)}>
-            <FavoriteComponent  />
-            </div>
+        <div className="item-stack">
+            <img
+              src={whiskey.Photo}
+              alt={whiskey.brand}
+              className="img-index"
+            />
+            <button className="link-index">
+              <Link to={`/whiskey/${whiskey._id}`}>
+                <h3 className="font">{whiskey.Name}</h3>{" "}
+              </Link>
+              <div id='favorites-link' onClick={ () => props.handleFavoritesClick(whiskey)}>
+                <FavoriteComponent  />
+              </div>
+            </button>
+          </div>
+
+          {/* <h5>{whiskey.Price}</h5> */}
+            
+            
+            
+            
+            
+            
+            
+            
+            
+
         </div>
       </div>
     ));

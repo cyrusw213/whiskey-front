@@ -6,6 +6,7 @@ import './style/irishwhiskey.css';
 import './style/scotch.css';
 //import './style/custom.css';
 import './style/index.css';
+import '.style/item.css';
 import { auth } from './services/firebase';
 import { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';

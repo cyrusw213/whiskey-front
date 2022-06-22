@@ -4,7 +4,7 @@ import './style/rye.css';
 import './style/american.css';
 import './style/irishwhiskey.css';
 import './style/scotch.css';
-import './style/custom.css';
+//import './style/custom.css';
 import './style/index.css';
 import { auth } from './services/firebase';
 import { useState, useEffect } from 'react';

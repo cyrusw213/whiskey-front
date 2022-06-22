@@ -5,6 +5,8 @@ import './style/rye.css';
 import './style/american.css';
 import './style/irishwhiskey.css';
 import './style/scotch.css';
+import './style/custom.css';
+import './style/show.css';
 import { auth } from './services/firebase';
 import { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';

@@ -7,7 +7,7 @@ import './style/scotch.css';
 import './style/custom.css';
 import './style/index.css';
 import './style/item.css';
-import './style/show.css';
+import './style/show.css'
 import { auth } from './services/firebase';
 import { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';

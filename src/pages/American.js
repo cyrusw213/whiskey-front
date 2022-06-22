@@ -21,9 +21,9 @@ function American(props) {
     const merican = whiskey.filter((drink) => drink.Categories === "American");
     console.log(merican);
     return merican.map((merican, index) => (
-      <div className="flex-container">
-        <div key={index} className={merican.Categories}>
-          <div className="american-stack">
+      <div key={index} className="flex-container">
+        <div  className={merican.Categories}>
+          <div  className="american-stack">
           <img src={merican.Photo} alt={merican.brand} className="img-american"/>
           <button className="link-american">
           <Link to={`/whiskey/${merican._id}`}> {" "} <h3 className="font"> {merican.Name}</h3>{" "} </Link>

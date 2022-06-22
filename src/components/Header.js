@@ -15,8 +15,13 @@ const Header = (props) => {
                         ? <li onClick={logout}>Logout</li>
                         :
                         <li onClick={login}>Login</li>
+                        
                 }
             </ul>
+
+            <Link to='/favorites'>
+                <div className="favs">fav</div>
+            </Link>
 
         </nav>
     );

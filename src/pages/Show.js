@@ -39,7 +39,7 @@
 //             <h2>Name: {drink?.Name}</h2>
 //             <h4>Price: ${drink?.Price}</h4>
 //             <h4>Origin: {drink?.Country}</h4>
-//             <h4>Website: {drink?.Website}</h4>
+//             <a href={drink.Website} target="_blank">Distiller Website</a>
 //             <h5>Rating: {drink?.Rating}</h5>
 //             <form onSubmit={handleSubmit}>
 //                 <input

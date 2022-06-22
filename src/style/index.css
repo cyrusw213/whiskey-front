@@ -5,12 +5,9 @@
     grid-auto-flow: row;
     padding: 7%;
     border: 2px solid transparent;
-}
-
-.scotch-stack{
-    border: 5px solid transparent;
 } */
-.flex-container div{
+
+ .flex-container div{
     
     width: var(--s);
     background-image: url(https://data.whicdn.com/images/344427429/original.gif);
@@ -38,21 +35,27 @@
          #0000 0 cal(var(--f) - 3px),
          #000 0 var(---f));
  }
- 
-.img-scotch{
+
+/* .index-stack{
+    border: 5px solid transparent;
+} */
+
+.img-index{
     width: 300px; 
     height: 500px;
 }
+
 .font{ 
     font-size: small;
 }
 
-.link-scotch{
+.link-index{
     border: solid transparent;
     background-color: transparent;
     padding: 25%;
     font-size: 10px;
     cursor: pointer;
+    
 }
 
-.link-scotch:hover {transform: scale(1.5);}
+.link-index:hover {transform: scale(1.5);} 

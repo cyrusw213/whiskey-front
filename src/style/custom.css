@@ -1,4 +1,5 @@
-/* body {
+
+body {
     min-height: 100vh;
     background-image: url('https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2021%2F07%2F20%2Fhigh-end-bourbon-bottles-to-collect-FT-BLOG0721.jpg');
     background-repeat: no-repeat;
@@ -32,11 +33,12 @@
     font-size: 40px;
     position: relative;
     display: inline-block;
-    padding-right: 42.5vw;
+    padding-left: 22.5vw;
     padding-top: 25vh;
     margin: 0 auto;
     /* -webkit-text-stroke: 5px rgba(150, 73, 2, .5);  */
-  /* }
+  }
+
    
    
   .btn {
@@ -49,7 +51,9 @@
     background-color: rgba(150, 73, 2, 0);
     border: none;
     /* -webkit-text-stroke: 5px rgba(183, 159, 137, 0.893);  */
-  /* }
+
+  }
+
    
   .btn:visited {
     color: #E47610;
@@ -63,9 +67,11 @@
     outline: none;
     box-shadow: none;
     background-color: rgba(150, 73, 2, 0);
-  } */
+
+  }
    
-  /* .btn:hover {
+  .btn:hover {
+
     color: #efc959;
     background-color: rgba(150, 73, 2, 0);
   }
@@ -75,9 +81,11 @@
     outline: none;
     box-shadow: none;
     background-color: rgba(150, 73, 2, 0);
-  } */
+
+  }
    
-  /* a,
+  a,
+
   ul {
     font-family: 'sansita', italics;
     color: #E47610;
@@ -95,17 +103,18 @@
    
   ul:hover {
     color: #efc959;
-  } */
+
+  }
    
-  /* .dropdown-item {
+  .dropdown-item {
     font-family: 'sansita', italics;
     color: #E47610;
     font-size: 35px;
-    padding-right: 45vw;
     -webkit-text-stroke: 3px rgba(242, 122, 9, 0.55);
     /* border: none; */
    
-  /* }
+  }
+
    
   .dropdown-item:hover {
     background-color: rgba(150, 73, 2, 0);
@@ -116,10 +125,12 @@
   .dropdown-toggle {
     color: #E47610;
     -webkit-text-stroke: 4px rgba(0, 0, 0, 0.15);
-  }  */
+
+  }
    
    
-  /* .show {
+  .show {
+
     position: center;
     display: block;
     padding-left: 1vw;
@@ -132,15 +143,17 @@
 
   .home {
         padding-left: 1vw;
-  } */
+  }
 
-  /* .product {
+  .product {
+
     font-family: "sansita", italics;
     color: #E47610;
     -webkit-text-stroke: 4px rgba(0, 0, 0, 0.15);
     position: relative;
     padding-left: 1vw;
-  } */
+  }
+
 
   /* .prodImg {
     position: absolute;
@@ -288,3 +301,4 @@
   .home {
         padding-left: 1vw;
   }
+

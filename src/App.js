@@ -1,6 +1,8 @@
-import './style/App.css';
-////import './style/custom.css'
+// import './style/App.css';
+import './style/custom.css';
 import './style/bourbon.css';
+import './style/show.css';
+import './style/item.css';
 import './style/rye.css';
 import './style/american.css';
 import './style/irishwhiskey.css';

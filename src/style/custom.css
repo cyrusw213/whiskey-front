@@ -105,9 +105,9 @@
     border: none;
     stroke: none;
     text-decoration: none;
-    /* position: absolute;
-    right: 600px; */
-   
+    position: absolute;
+    left: 25px;
+    list-style: none;
     -webkit-text-stroke: 2px rgba(150, 73, 2, .35);
   }
    
@@ -119,10 +119,15 @@
     color: #efc959;
   }
 
-  /* .home {
+  .home {
     position: absolute;
-    right: 685px;
-  } */
+    left: 15px;
+  }
+
+  .favs {
+    position: absolute;
+    left: 100px;
+  }
    
   .dropdown-item {
     font-family: 'sansita', italics;

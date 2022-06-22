@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react'
 // import ReactDOM from "react-dom"
 import { Link } from 'react-router-dom'
+
  
 function Welcome() {
     const [navLinks, setNavLinks] = useState([]);
@@ -20,7 +21,7 @@ function Welcome() {
         setNavLinks(navs);
     }, []);
  
- 
+   
     return (
         <div>
             <h1 className="welcome">The Spirit Within</h1>

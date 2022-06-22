@@ -1,9 +1,11 @@
-import './App.css';
+import './style/App.css';
 import './style/bourbon.css';
 import './style/rye.css';
 import './style/american.css';
 import './style/irishwhiskey.css';
 import './style/scotch.css';
+// import './style/custom.css';
+import './style/index.css';
 import { auth } from './services/firebase';
 import {useState, useEffect} from 'react';
 import { Route, Switch } from 'react-router-dom';

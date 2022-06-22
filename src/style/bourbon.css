@@ -12,8 +12,8 @@
 }
 
 .img-bourbon{
-    width:100px ;
-    height:100px;
+    max-width:100px ;
+    max-height:350px;
 }
 .font{ 
     font-size: small;
@@ -29,4 +29,4 @@
     color: aqua;
 }
 
-.link-bourbon:hover {background: blueviolet;}
+.link-bourbon:hover {background: rgba(137, 43, 226, 0);}

@@ -61,14 +61,14 @@
 
 // export default Show;
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import ProductInfo from './ProductInfo.js'
  
  
 const Show = (props) => {
     console.log(props?.whiskey)
     const id = props.match.params.id;
-    const drink = props.whiskey.find(p => p._id === id);
+    const drink = props?.whiskey?.find(p => p._id === id);
  
     //state for form
     const [editForm, setEditForm] = useState(drink);
@@ -80,6 +80,12 @@ const Show = (props) => {
             [e.target.name]: e.target.value
         })
     }
+
+    useEffect(() => {
+        
+        setEditForm(drink);
+        } , [drink])
+
     //handle submit for form
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -93,21 +99,21 @@ const Show = (props) => {
         <div className="container">
             <div className="product">
                 <div className="imgDiv">
-                <img className="prodImg" src={drink.Photo} alt={drink.Name} />
+                <img className="prodImg" src={drink?.Photo} alt={drink?.Name} />
                 </div>
-                <h1 className="showHead"> {drink.Brand}</h1>
-                <h2>{drink.Name}</h2>
-                <h4>${drink.Price}</h4>
-                <h4>{drink.Country}</h4>
-                <a href={drink.Website} target="_blank">Distiller Website</a>                
-                <h5>Rating: {drink.Rating}</h5>
+                <h1 className="showHead"> {drink?.Brand}</h1>
+                <h2>{drink?.Name}</h2>
+                <h4>${drink?.Price}</h4>
+                <h4>{drink?.Country}</h4>
+                <a href={drink?.Website} target="_blank">Distiller Website</a>                
+                <h5>Rating: {drink?.Rating}</h5>
                
                
  
                 <form onSubmit={handleSubmit}>
                     <input
                         name="Rating"
-                        value={editForm.Rating}
+                        value={editForm?.Rating}
                         placeholder="Rate from 1-5"
                         onChange={handleChange}
                         type="number"

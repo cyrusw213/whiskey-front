@@ -178,6 +178,7 @@ function App() {
       <Route path="/whiskey/:id"
         render={(renderProps) => (
           <Show
+          user={user}
             {...renderProps}
             whiskey={whiskey}
             updateWhiskey={updateWhiskey}

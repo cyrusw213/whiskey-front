@@ -24,19 +24,23 @@ function Index(props) {
       <div className="flex-container">
         {whiskey.map((whiskey, index) => (
       <div key={index} className={whiskey.Categories}>
-        <div className="item-stack">
+        
           <img src={whiskey.Photo} alt={whiskey.brand} className="img-index" />
-          <button className="link-index">
+          
+          
+          <div className="link-index">
+            <button>
             <Link to={`/whiskey/${whiskey._id}`}>
               <h3 className="font">{whiskey.Name}</h3>{" "}
             </Link>
+            </button>
             <div
               id="favorites-link"
               onClick={() => props.handleFavoritesClick(whiskey)}
             >
               <FavoriteComponent />
             </div>
-          </button>
+          
         </div>
         {/* <h5>{whiskey.Price}</h5> */}
       </div>

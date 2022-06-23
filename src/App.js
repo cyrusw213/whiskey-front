@@ -133,19 +133,29 @@ function App() {
         <Welcome />
       </Route>
       <Route path="/bourbon">
-        <Bourbon url={URL} />
+        <Bourbon 
+        favoriteComponent={AddFavorite}
+        url={URL} />
       </Route>
       <Route path="/rye">
-        <Rye url={URL} />
+        <Rye 
+        favoriteComponent={AddFavorite}
+        url={URL} />
       </Route>
       <Route path="/american">
-        <American url={URL} />
+        <American 
+        favoriteComponent={AddFavorite}
+        url={URL} />
       </Route>
       <Route path="/irish">
-        <IrishWhiskey url={URL} />
+        <IrishWhiskey 
+        favoriteComponent={AddFavorite}
+        url={URL} />
       </Route>
       <Route path="/scotch">
-        <Scotch url={URL} />
+        <Scotch 
+        favoriteComponent={AddFavorite}
+        url={URL} />
       </Route>
       <Route exact path="/whiskey">
         <Index

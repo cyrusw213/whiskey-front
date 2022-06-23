@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Scotch(props) {
   const [whiskey, setWhiskey] = useState(props.whiskey);
-
+  const FavoriteComponent = props.favoriteComponent;
   const getWhiskey = async () => {
     const response = await fetch(props.url);
 
@@ -30,6 +30,9 @@ function Scotch(props) {
                 {" "}
                 <h3 className="font"> {scotch.Name}</h3>{" "}
               </Link>
+              <div id='favorites-link' onClick={() => props.handleFavoritesClick(whiskey)}>
+                <FavoriteComponent />
+              </div>
             </button>
           </div>
           {/* <h5>${scotch.Price}</h5> */}

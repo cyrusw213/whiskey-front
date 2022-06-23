@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 
 function Scotch(props) {
   const [whiskey, setWhiskey] = useState(props.whiskey);
-
+  const FavoriteComponent = props.favoriteComponent;
+  
+  
   const getWhiskey = async () => {
     const response = await fetch(props.url);
 
@@ -19,10 +21,10 @@ function Scotch(props) {
 
   const loaded = () => {
     const scotch = whiskey.filter((drink) => drink.Categories === "Scotch");
-    console.log(scotch);
+    // console.log(scotch);
     return scotch.map((scotch, index) => (
-      <div className="flex-container">
-        <div key={index} className={scotch.Categories}>
+      <div key={index} className="flex-container">
+        <div className={scotch.Categories}>
           <div className="scotch-stack">
             <img src={scotch.Photo} alt={scotch.brand} className="img-scotch" />
             <button className="link-scotch">
@@ -30,6 +32,13 @@ function Scotch(props) {
                 {" "}
                 <h3 className="font"> {scotch.Name}</h3>{" "}
               </Link>
+              {
+                props.user
+                  ? <div id='favorites-link' onClick={() => props.handleFavoritesClick(whiskey)}>
+                    <FavoriteComponent />
+                  </div>
+                  : <></>
+              }
             </button>
           </div>
           {/* <h5>${scotch.Price}</h5> */}

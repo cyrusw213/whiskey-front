@@ -35,7 +35,8 @@ const Header = (props) => {
                 }
                
             </ul>
-
+{
+    props.user ?
             <Link to='/favorites'>
                 <div className="favs">
                     <span className="favHover" data-hover="Favorites">
@@ -43,7 +44,8 @@ const Header = (props) => {
                     </span>
                 </div>
             </Link>
-
+            : <></>
+}
         </nav>
     );
 };

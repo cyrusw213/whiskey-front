@@ -22,7 +22,7 @@ import American from './pages/American'
 import Show from './pages/Show'
 import AddFavorite from './components/AddFavorite';
 import Favorite from './pages/Favorite';
-
+import RemoveFavorites from './components/RemoveFavorites';
 
 
 
@@ -97,6 +97,14 @@ function App() {
     }
   }
 
+  const removeFavoriteWhiskey = (whiskey) => {
+      const newFavoriteList = favorites.filter(
+        (fav) => fav._id !== whiskey._id
+
+      );
+      console.log(whiskey._id)
+      setFavorites(newFavoriteList)
+  }
 
 
 
@@ -144,6 +152,8 @@ function App() {
           <Favorite
               whiskey={favorites}
               user={user} 
+              favoriteComponent={RemoveFavorites}
+              handleFavoritesClick={removeFavoriteWhiskey}
               />
         </Route>
       {/* </Switch> */}

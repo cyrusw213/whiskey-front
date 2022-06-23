@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 function American(props) {
   const [whiskey, setWhiskey] = useState(props.whiskey);
-
+  const FavoriteComponent = props.favoriteComponent;
+  
   const getWhiskey = async () => {
     const response = await fetch(props.url);
 
@@ -22,12 +23,19 @@ function American(props) {
     console.log(merican);
     return merican.map((merican, index) => (
       <div key={index} className="flex-container">
-        <div  className={merican.Categories}>
-          <div  className="american-stack">
-          <img src={merican.Photo} alt={merican.brand} className="img-american"/>
-          <button className="link-american">
-          <Link to={`/whiskey/${merican._id}`}> {" "} <h3 className="font"> {merican.Name}</h3>{" "} </Link>
-          </button>
+        <div className={merican.Categories}>
+          <div className="american-stack">
+            <img src={merican.Photo} alt={merican.brand} className="img-american" />
+            <button className="link-american">
+              <Link to={`/whiskey/${merican._id}`}> {" "} <h3 className="font"> {merican.Name}</h3>{" "} </Link>
+              {
+                props.user
+                  ? <div id='favorites-link' onClick={() => props.handleFavoritesClick(whiskey)}>
+                    <FavoriteComponent />
+                  </div>
+                  : <></>
+              }
+            </button>
           </div>
           {/* <h5>${merican.Price}</h5> */}
         </div>

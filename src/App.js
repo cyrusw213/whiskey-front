@@ -10,7 +10,7 @@ import './style/item.css';
 import './style/show.css'
 import { auth } from './services/firebase';
 import { useState, useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Welcome from './pages/Welcome';
 import Index from './components/Index'
 import Header from './components/Header';
@@ -98,12 +98,12 @@ function App() {
   }
 
   const removeFavoriteWhiskey = (whiskey) => {
-      const newFavoriteList = favorites.filter(
-        (fav) => fav._id !== whiskey._id
+    const newFavoriteList = favorites.filter(
+      (fav) => fav._id !== whiskey._id
 
-      );
-      console.log(whiskey._id)
-      setFavorites(newFavoriteList)
+    );
+    console.log(whiskey._id)
+    setFavorites(newFavoriteList)
   }
 
 
@@ -114,48 +114,72 @@ function App() {
 
       <Header user={user} />
       {/* <Switch> */}
-        <Route exact path="/">
-          <Welcome />
-        </Route>
-        <Route path="/bourbon">
-          <Bourbon url={URL} />
-        </Route>
-        <Route path="/rye">
-          <Rye url={URL} />
-        </Route>
-        <Route path="/american">
-          <American url={URL} />
-        </Route>
-        <Route path="/irish">
-          <IrishWhiskey url={URL} />
-        </Route>
-        <Route path="/scotch">
-          <Scotch url={URL} />
-        </Route>
-        <Route exact path="/whiskey">
-          <Index
+      <Route exact path="/">
+        <Welcome />
+      </Route>
+      <Route path="/bourbon">
+        <Bourbon
+          user={user}
+          favoriteComponent={AddFavorite}
+          url={URL}
+          handleFavoritesClick={addFavoriteWhiskey} />
+      </Route>
+      <Route path="/rye">
+        <Rye
+          user={user}
+          favoriteComponent={AddFavorite}
+          url={URL}
+          handleFavoritesClick={addFavoriteWhiskey} />
+      </Route>
+      <Route path="/american">
+        <American
+          user={user}
+          favoriteComponent={AddFavorite}
+          url={URL}
+          handleFavoritesClick={addFavoriteWhiskey} />
+      </Route>
+      <Route path="/irish">
+        <IrishWhiskey
+          user={user}
+          favoriteComponent={AddFavorite}
+          url={URL}
+          handleFavoritesClick={addFavoriteWhiskey} />
+      </Route>
+      <Route path="/scotch">
+        <Scotch
+          user={user}
+          favoriteComponent={AddFavorite}
+          url={URL}
+          handleFavoritesClick={addFavoriteWhiskey} />
+      </Route>
+      <Route exact path="/whiskey">
+        <Index
+          user={user}
+          whiskey={whiskey}
+          handleFavoritesClick={addFavoriteWhiskey}
+          url={URL}
+          favoriteComponent={AddFavorite} />
+      </Route>
+      <Route path="/whiskey/:id"
+        render={(renderProps) => (
+          <Show
+            favoriteComponent={AddFavorite}
+            user={user}
+            {...renderProps}
             whiskey={whiskey}
+            updateWhiskey={updateWhiskey}
             handleFavoritesClick={addFavoriteWhiskey}
-            url={URL}
-            favoriteComponent={AddFavorite} />
-        </Route>
-        <Route path="/whiskey/:id"
-          render={(renderProps) => (
-            <Show
-              {...renderProps}
-              whiskey={whiskey}
-              updateWhiskey={updateWhiskey}
-            />
-          )}
+          />
+        )}
+      />
+      <Route path="/favorites">
+        <Favorite
+          whiskey={favorites}
+          user={user}
+          favoriteComponent={RemoveFavorites}
+          handleFavoritesClick={removeFavoriteWhiskey}
         />
-        <Route path="/favorites">
-          <Favorite
-              whiskey={favorites}
-              user={user} 
-              favoriteComponent={RemoveFavorites}
-              handleFavoritesClick={removeFavoriteWhiskey}
-              />
-        </Route>
+      </Route>
       {/* </Switch> */}
     </div>
   );

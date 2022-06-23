@@ -195,7 +195,7 @@ function App() {
         favoriteComponent={RemoveFavorites}
         handleFavoritesClick={removeFavoriteWhiskey}
 
-  }
+  
 
         />
         <Route path="/favorites">

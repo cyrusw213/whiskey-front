@@ -89,19 +89,19 @@ function App() {
 
   useEffect(() => { getWhiskey() }, [])
 
-  useEffect(() => {
-    const userFavorites = JSON.parse(
-      localStorage.getItem('spirit-within-user-favorites')
-    );
-  setFavorites(userFavorites); 
-    }, []);
+  // useEffect(() => {
+  //   const userFavorites = JSON.parse(
+  //     localStorage.getItem('spirit-within-user-favorites')
+  //   );
+  // setFavorites(userFavorites); 
+  //   }, []);
 
 
 
   // Save favorites to local storage ///////////////////////
-  const saveToLocalStorage = (items) => {
-    localStorage.setItem('spirit-within-user-favorites', JSON.stringify(items))
-  };
+  // const saveToLocalStorage = (items) => {
+  //   localStorage.setItem('spirit-within-user-favorites', JSON.stringify(items))
+  // };
 
 
 
@@ -110,7 +110,7 @@ function App() {
 
     const newFavoriteList = [...favorites, whiskey];
     setFavorites(newFavoriteList);
-    saveToLocalStorage(newFavoriteList); 
+    // saveToLocalStorage(newFavoriteList); 
   }
   
   const removeFavoriteWhiskey = (whiskey) => {
@@ -120,7 +120,7 @@ function App() {
       );
       console.log(whiskey._id)
       setFavorites(newFavoriteList)
-      saveToLocalStorage(newFavoriteList)
+      // saveToLocalStorage(newFavoriteList)
     };
     
 // ///////////// Components and Routes ////////////////////////////////////////

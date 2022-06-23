@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function IrishWhiskey(props) {
   const [whiskey, setWhiskey] = useState(props.whiskey);
-
+  const FavoriteComponent = props.favoriteComponent;
   const getWhiskey = async () => {
     const response = await fetch(props.url);
 
@@ -41,6 +41,7 @@ function IrishWhiskey(props) {
               </div>
             </div>
             {/* <h5>${irish.Price}</h5> */}
+
           </div>
         ))}
       </div>

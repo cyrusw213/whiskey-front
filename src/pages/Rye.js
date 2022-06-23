@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Rye(props) {
   const [whiskey, setWhiskey] = useState(props.whiskey);
-
+  const FavoriteComponent = props.favoriteComponent;
   const getWhiskey = async () => {
     const response = await fetch(props.url);
 
@@ -41,6 +41,7 @@ function Rye(props) {
               </div>
             </div>
             {/* <h5>${rye.Price}</h5> */}
+
           </div>
         ))}
       </div>

@@ -1,42 +1,58 @@
-.showHead {
-    /* position: "relative";
-    font-family: 'Arima Madurai', cursive;
+/*.showHead {
    
-    font-style: normal;
-    font-weight: 800;
-    */
-    /* line-height: 18.375rem; */
-    font-family: "sansita", italics;
+    /* font-family: "sansita", italics;
     color: #E47610;
-    /* text-shadow: inset -2, 3, 2 rgba(96, 48, 3, 0.8); */
     text-shadow: -4px 4px 6px rgba(92, 46, 4, 0.8);
     -webkit-text-stroke: 1px rgb(60, 32, 6, 0.5);
-    font-size: 100px;
+    font-size: 400%;
     position: absolute;
     text-align: center;
-    bottom: 295px;
+    bottom: 115%;
     left: 0px;
    
     color: #ef8624;
-    -webkit-text-stroke: 5.5px rgba(150, 73, 2, .25);
+    -webkit-text-stroke: 5.5px rgba(150, 73, 2, .25); */
    
-  }
+  
  
  .product {
     /* background-color: #5e2f0f43; */
     font-family: "sansita", italics;
     color: #ef8624;
     text-shadow: -4px 4px 6px rgba(92, 46, 4, 0.8);
-    -webkit-text-stroke: 1px rgba(60, 32, 6, 0.313);
+    /* -webkit-text-stroke: 1px rgba(60, 32, 6, 0.313); */
     position: absolute;
-    top: 275px;
+    /* top: 375px; */
+    top: 30%;
     left: 350px;
+    -webkit-text-stroke: 3px rgba(242, 122, 9, 0.55);
   }
  
   .prodImg {
     max-height: 475px;
     max-width: 225px;
     position: absolute;
-    bottom: 0px;
+    bottom: -32.5%;
     left: -300px;
+  }
+
+  .form {
+    background-color: #e47610c6;
+    border-radius: 6px;
+    border: none;
+    margin-left: 2.5px;
+  }
+
+  .form:hover {
+    color: #efc959;
+  }
+
+  .rate {
+    background-color: #e47610c6;
+    border-radius: 6px;
+    border: none;
+  }
+
+  .rate:hover {
+    color:#efc959
   }

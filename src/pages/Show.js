@@ -38,8 +38,8 @@ const Show = (props) => {
                 <div className="imgDiv">
                 <img className="prodImg" src={drink?.Photo} alt={drink?.Name} />
                 </div>
-                <h1 className="showHead"> {drink?.Brand}</h1>
-                <h2>{drink?.Name}</h2>
+                {/* <h1 className="showHead"> {drink?.Brand}</h1> */}
+                <h1>{drink?.Name}</h1>
                 <h4>${drink?.Price}</h4>
                 <h4>{drink?.Country}</h4>
                 <a href={drink?.Website} target="_blank" rel="noreferrer">Distiller Website</a>                
@@ -47,8 +47,8 @@ const Show = (props) => {
                
                
  
-                <form onSubmit={handleSubmit}>
-                    <input
+                <form onSubmit={handleSubmit} >
+                    <input className="rate"
                         name="Rating"
                         value={editForm?.Rating}
                         placeholder="Rate from 1-5"
@@ -57,7 +57,7 @@ const Show = (props) => {
                         min="1"
                         max="5"
                         />
-                    <input type="submit" value="Update Rating" />
+                    <input type="submit" value="Update Rating" className="form" />
                 </form>
             </div>
             </div>

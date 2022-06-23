@@ -162,7 +162,137 @@
    
   }
 
-#favorites-link {
-  color: white;
-  background-color: gray;
+  .hoverLogout {
+    position: relative;
+  }
+
+  .hoverLogout:before {
+    content: attr(data-hover);
+    visibility: hidden;
+    opacity: 0;
+    width: 14px;
+    background-color: rgba(255, 255, 255, 0); 
+    color: #efc959;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 5px;
+    padding: 5px 0;
+    transition: opacity 1s ease-in-out;
+
+    position: absolute;
+    z-index: 1;
+    left: -20px;
+    top: 80%;
+  }
+
+  .hoverLogout:hover:before {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .hoverLogin {
+    position: relative;
+  }
+
+  .hoverLogin:before {
+    content: attr(data-hover);
+    visibility: hidden;
+    opacity: 0;
+    width: 140px;
+    background-color: rgba(0, 0, 0, 0);
+    color:#efc959;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 5px;
+    padding: 5px 0;
+    transition: opacity 1s ease-in-out;
+
+    position: absolute;
+    z-index: 1;
+    left: -23px;
+    top: 80%;
+  }
+
+   .hoverLogin:hover:before {
+    opacity: 1;
+    visibility: visible;
+   }
+
+.favHover {
+  position: absolute;
+}
+
+.favHover:before {
+  content: attr(data-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: 140px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #efc959;
+  text-align: center;
+  font-size: 25px;
+  padding: 5px 0;
+  transition: opacity 1s ease-in-out;
+
+  position: absolute;
+  z-index: -1;
+  left: -54px;
+  top: 80%;
+}
+
+.favHover:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hoverHome {
+  position: absolute;
+}
+
+.hoverHome:before {
+  content: attr(data-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: 140px; 
+  background-color: rgba(0, 0, 0, 0);
+  color: #efc959;
+  text-align: center;
+  font-size: 25px;
+  padding: 5px 0;
+  transition: opacity 1s ease-in-out;
+
+  position: absolute;
+  z-index: -1;
+  left: -50px;
+  top: 80%;
+}
+
+.hoverHome:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.favorites {
+  font-family: 'sansita', italics;
+  color: #E47610;
+  font-size: 2.188rem;
+  
+  -webkit-text-stroke: 3px rgba(242, 122, 9, 0.55);
+}
+
+.removeFavs {
+  font-family: 'sansita', italics;
+  color: #E47610;
+  font-size: 15px;
+  
+  -webkit-text-stroke: 3px rgba(242, 122, 9, 0.55);
+}
+
+.favorites:hover {
+  color: #efc959;
+}
+
+.removeFavs:hover {
+  color: #efc959;
+
 }

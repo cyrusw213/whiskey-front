@@ -88,10 +88,10 @@ function App() {
 
 
   // useEffect(() => {
-  //   const userFavorites = JSON.parse(
-  //     localStorage.getItem('spirit-within-user-favorites')
-  //   );
-  // setFavorites(userFavorites); 
+  //   // const userFavorites = JSON.parse(
+  //   //   localStorage.getItem('spirit-within-user-favorites')
+  //   // );
+  // setFavorites(); 
   //   }, []);
 
 
@@ -133,38 +133,43 @@ function App() {
         <Welcome />
       </Route>
       <Route path="/bourbon">
-        <Bourbon 
-         user={user}
-        favoriteComponent={AddFavorite}
-        url={URL} />
+        <Bourbon
+          handleFavoritesClick={addFavoriteWhiskey}
+          user={user}
+          favoriteComponent={AddFavorite}
+          url={URL} />
       </Route>
       <Route path="/rye">
-        <Rye 
-         user={user}
-        favoriteComponent={AddFavorite}
-        url={URL} />
+        <Rye
+          handleFavoritesClick={addFavoriteWhiskey}
+          user={user}
+          favoriteComponent={AddFavorite}
+          url={URL} />
       </Route>
       <Route path="/american">
-        <American 
-         user={user}
-        favoriteComponent={AddFavorite}
-        url={URL} />
+        <American
+          handleFavoritesClick={addFavoriteWhiskey}
+          user={user}
+          favoriteComponent={AddFavorite}
+          url={URL} />
       </Route>
       <Route path="/irish">
-        <IrishWhiskey 
-         user={user}
-        favoriteComponent={AddFavorite}
-        url={URL} />
+        <IrishWhiskey
+          handleFavoritesClick={addFavoriteWhiskey}
+          user={user}
+          favoriteComponent={AddFavorite}
+          url={URL} />
       </Route>
       <Route path="/scotch">
-        <Scotch 
-         user={user}
-        favoriteComponent={AddFavorite}
-        url={URL} />
+        <Scotch
+          handleFavoritesClick={addFavoriteWhiskey}
+          user={user}
+          favoriteComponent={AddFavorite}
+          url={URL} />
       </Route>
       <Route exact path="/whiskey">
         <Index
-         user={user}
+          user={user}
           whiskey={whiskey}
           handleFavoritesClick={addFavoriteWhiskey}
           url={URL}
@@ -173,25 +178,27 @@ function App() {
       <Route path="/whiskey/:id"
         render={(renderProps) => (
           <Show
+          user={user}
             {...renderProps}
             whiskey={whiskey}
             updateWhiskey={updateWhiskey}
           />
-        )}  />
-        <Route path="/favorites">
-       <Favorite
-        whiskey={favorites}
-        user={user}
-        favoriteComponent={RemoveFavorites}
-
-        handleFavoritesClick={removeFavoriteWhiskey}
+        )} />
+      <Route path="/favorites">
+        <Favorite
+          whiskey={favorites}
+          user={user}
+          favoriteComponent={RemoveFavorites}
+          handleFavoritesClick={removeFavoriteWhiskey}
         />
 
-        </Route>
-      {/* </Switch> */}    
+
+      </Route>
+      {/* </Switch> */}
     </div>
-        
-  )}    ;
+
+  )
+};
 
 // return (
 //       <div className="App">

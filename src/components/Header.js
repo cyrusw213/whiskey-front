@@ -7,34 +7,44 @@ import { FaHeart, FaHome, FaGlassWhiskey, FaPenNib, FaHandSpock, FaRegHandSpock 
 const Header = (props) => {
     return (
         <nav className="nav">
-            <Link to='/'>
-                <div className="home"><FaHome /></div>
-                ? <li onClick={logout}>
-                            <span class="hoverLogout" data-hover="Logout">
-                                <FaRegHandSpock />
-                            </span>
-                        </li>
-                        
-                        :
-                        <li onClick={login}>
-                            <span class="hoverLogin" data-hover="Login">
-                                <FaPenNib />
-                            </span>    
-                        </li>
-                
-               
-            </ul>
-
-            <Link to='/favorites'>
-                <div className="favs">
-                    <span className="favHover" data-hover="Favorites">
-                        <FaHeart />
-                    </span>
-                </div>
-            </Link>
+        <Link to='/'>
+            <div className="home">
+                <span class="hoverHome" data-hover="Home">
+                    <FaHome />
+                </span>
+            </div>
+            
+        </Link>
+        <ul>
+            {
+                props.user
+                    //   conditional rendering of login/logout based on user 
+                    
+                    ? <li onClick={logout}>
+                        <span class="hoverLogout" data-hover="Logout">
+                            <FaRegHandSpock />
+                        </span>
+                    </li>
+                    
+                    :
+                    <li onClick={login}>
+                        <span class="hoverLogin" data-hover="Login">
+                            <FaPenNib />
+                        </span>    
+                    </li>
+            }
            
-               
-        </nav>
+        </ul>
+
+        <Link to='/favorites'>
+            <div className="favs">
+                <span className="favHover" data-hover="Favorites">
+                    <FaHeart />
+                </span>
+            </div>
+        </Link>
+
+    </nav>
     );
 };
 

@@ -5,4 +5,6 @@
     grid-auto-flow: row;
     padding: 7%;
     border: 2px solid transparent;
+    font-size: 30px;
+    -webkit-text-stroke: 3px rgba(242, 122, 9, 0.55);
 }

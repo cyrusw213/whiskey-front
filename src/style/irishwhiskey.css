@@ -45,6 +45,7 @@
 
 .font{ 
     font-size: small;
+    -webkit-text-stroke: 3px rgba(242, 122, 9, 0.55);
 }
 
 .link-irishwhiskey{

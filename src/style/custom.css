@@ -279,3 +279,19 @@
   
   -webkit-text-stroke: 3px rgba(242, 122, 9, 0.55);
 }
+
+.removeFavs {
+  font-family: 'sansita', italics;
+  color: #E47610;
+  font-size: 15px;
+  
+  -webkit-text-stroke: 3px rgba(242, 122, 9, 0.55);
+}
+
+.favorites:hover {
+  color: #efc959;
+}
+
+.removeFavs:hover {
+  color: #efc959;
+}

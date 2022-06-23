@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function IrishWhiskey(props) {
   const [whiskey, setWhiskey] = useState(props.whiskey);
-
+  const FavoriteComponent = props.favoriteComponent;
   const getWhiskey = async () => {
     const response = await fetch(props.url);
 
@@ -34,6 +34,9 @@ function IrishWhiskey(props) {
                 {" "}
                 <h3 className="font"> {irish.Name}</h3>{" "}
               </Link>
+              <div id='favorites-link' onClick={() => props.handleFavoritesClick(whiskey)}>
+                <FavoriteComponent />
+              </div>
             </button>
           </div>
 

@@ -44,8 +44,8 @@ function App() {
     setFavorites(favorites)
   }, [favorites])
 
-  // const URL = "https://whiskeywhiskey.herokuapp.com/whiskey/"
-  const URL = "http://localhost:4000/whiskey"
+  const URL = "https://whiskeywhiskey.herokuapp.com/whiskey/"
+  // const URL = "http://localhost:4000/whiskey"
 
   // request for whiskey json from heroku
 

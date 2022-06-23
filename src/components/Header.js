@@ -21,7 +21,7 @@ const Header = (props) => {
                                 <FaPenNib />
                             </span>    
                         </li>
-                }
+                
                
             </ul>
 
@@ -33,7 +33,7 @@ const Header = (props) => {
                 </div>
             </Link>
            
-                : <></>}
+               
         </nav>
     );
 };

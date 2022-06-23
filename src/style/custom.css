@@ -273,3 +273,11 @@
   opacity: 1;
   visibility: visible;
 }
+
+.favorites {
+  font-family: 'sansita', italics;
+  color: #E47610;
+  font-size: 2.188rem;
+  
+  -webkit-text-stroke: 3px rgba(242, 122, 9, 0.55);
+}

@@ -1,7 +1,7 @@
 const AddFavorite = () => {
     return (
         <>
-        <span>Add to Favorites</span>
+        <span id="favorite-text">Add to Favorites</span>
         <svg xmlns="http://www.w3.org/2000/svg" 
         width="16" 
         height="16" 

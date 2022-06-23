@@ -34,9 +34,13 @@ function IrishWhiskey(props) {
                 {" "}
                 <h3 className="font"> {irish.Name}</h3>{" "}
               </Link>
-              <div id='favorites-link' onClick={() => props.handleFavoritesClick(whiskey)}>
-                <FavoriteComponent />
-              </div>
+              {
+                props.user
+                  ? <div id='favorites-link' onClick={() => props.handleFavoritesClick(whiskey)}>
+                    <FavoriteComponent />
+                  </div>
+                  : <></>
+              }
             </button>
           </div>
 

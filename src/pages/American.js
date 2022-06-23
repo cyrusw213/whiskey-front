@@ -27,9 +27,13 @@ function American(props) {
             <img src={merican.Photo} alt={merican.brand} className="img-american" />
             <button className="link-american">
               <Link to={`/whiskey/${merican._id}`}> {" "} <h3 className="font"> {merican.Name}</h3>{" "} </Link>
-              <div id='favorites-link' onClick={() => props.handleFavoritesClick(whiskey)}>
-                <FavoriteComponent />
-              </div>
+              {
+                props.user
+                  ? <div id='favorites-link' onClick={() => props.handleFavoritesClick(whiskey)}>
+                    <FavoriteComponent />
+                  </div>
+                  : <></>
+              }
             </button>
           </div>
           {/* <h5>${merican.Price}</h5> */}

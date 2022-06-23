@@ -101,12 +101,12 @@
   ul {
     font-family: 'sansita', italics;
     color: #ef8624;
-    font-size: xx-large;
+    font-size: 1.25rem;
     border: none;
     stroke: none;
     text-decoration: none;
     position: absolute;
-    left: 50px;
+    left: 25px;
     list-style: none;
     -webkit-text-stroke: 2px rgba(150, 73, 2, .35);
   }
@@ -121,14 +121,12 @@
 
   .home {
     position: absolute;
-    font-size: xx-large;
-    left: 20px;
+    left: 15px;
   }
 
   .favs {
     position: absolute;
-    font-size: xx-large;
-    left: 145px;
+    left: 100px;
   }
    
   .dropdown-item {
@@ -163,114 +161,4 @@
  
    
   }
-
-  .hoverLogout {
-    position: relative;
-  }
-
-  .hoverLogout:before {
-    content: attr(data-hover);
-    visibility: hidden;
-    opacity: 0;
-    width: 14px;
-    background-color: rgba(255, 255, 255, 0); 
-    color: #efc959;
-    text-align: center;
-    font-size: 25px;
-    border-radius: 5px;
-    padding: 5px 0;
-    transition: opacity 1s ease-in-out;
-
-    position: absolute;
-    z-index: 1;
-    left: -20px;
-    top: 80%;
-  }
-
-  .hoverLogout:hover:before {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .hoverLogin {
-    position: relative;
-  }
-
-  .hoverLogin:before {
-    content: attr(data-hover);
-    visibility: hidden;
-    opacity: 0;
-    width: 140px;
-    background-color: rgba(0, 0, 0, 0);
-    color:#efc959;
-    text-align: center;
-    font-size: 25px;
-    border-radius: 5px;
-    padding: 5px 0;
-    transition: opacity 1s ease-in-out;
-
-    position: absolute;
-    z-index: 1;
-    left: -23px;
-    top: 80%;
-  }
-
-   .hoverLogin:hover:before {
-    opacity: 1;
-    visibility: visible;
-   }
-
-.favHover {
-  position: absolute;
-}
-
-.favHover:before {
-  content: attr(data-hover);
-  visibility: hidden;
-  opacity: 0;
-  width: 140px;
-  background-color: rgba(0, 0, 0, 0);
-  color: #efc959;
-  text-align: center;
-  font-size: 25px;
-  padding: 5px 0;
-  transition: opacity 1s ease-in-out;
-
-  position: absolute;
-  z-index: -1;
-  left: -54px;
-  top: 80%;
-}
-
-.favHover:hover:before {
-  opacity: 1;
-  visibility: visible;
-}
-
-.hoverHome {
-  position: absolute;
-}
-
-.hoverHome:before {
-  content: attr(data-hover);
-  visibility: hidden;
-  opacity: 0;
-  width: 140px; 
-  background-color: rgba(0, 0, 0, 0);
-  color: #efc959;
-  text-align: center;
-  font-size: 25px;
-  padding: 5px 0;
-  transition: opacity 1s ease-in-out;
-
-  position: absolute;
-  z-index: -1;
-  left: -50px;
-  top: 80%;
-}
-
-.hoverHome:hover:before {
-  opacity: 1;
-  visibility: visible;
-}
 

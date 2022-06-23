@@ -10,7 +10,7 @@ import './style/item.css';
 import './style/show.css'
 import { auth } from './services/firebase';
 import { useState, useEffect } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Welcome from './pages/Welcome';
 import Index from './components/Index'
 import Header from './components/Header';
@@ -23,7 +23,7 @@ import Show from './pages/Show'
 import AddFavorite from './components/AddFavorite';
 import Favorite from './pages/Favorite';
 import RemoveFavorites from './components/RemoveFavorites';
-// /////////////////////////////////////////////////////////////////////
+
 
 
 function App() {
@@ -45,7 +45,7 @@ function App() {
   }, [favorites])
 
   const URL = "https://whiskeywhiskey.herokuapp.com/whiskey/"
-  // const URL = "http://localhost:4000/whiskey"
+  // const URL = "http://localhost:4000/all"
 
   // request for whiskey json from heroku
 
@@ -58,9 +58,6 @@ function App() {
   // create function to create a new whiskey 
   const createWhiskey = async (createdWhiskey) => {
     // make post request to create whiskey 
-    if (!user) return;
-    const token = await user.getIdToken();
-    console.log(token);
     await fetch(URL, {
       method: 'POST',
       headers: {
@@ -89,6 +86,7 @@ function App() {
 
   useEffect(() => { getWhiskey() }, [])
 
+
   // useEffect(() => {
   //   const userFavorites = JSON.parse(
   //     localStorage.getItem('spirit-within-user-favorites')
@@ -111,15 +109,15 @@ function App() {
     const newFavoriteList = [...favorites, whiskey];
     setFavorites(newFavoriteList);
     // saveToLocalStorage(newFavoriteList); 
-  }
-  
+
   const removeFavoriteWhiskey = (whiskey) => {
-    const newFavoriteList = favorites.filter(
-      (fav) => fav._id !== whiskey._id
-      
+      const newFavoriteList = favorites.filter(
+        (fav) => fav._id !== whiskey._id
+
       );
       console.log(whiskey._id)
       setFavorites(newFavoriteList)
+
       // saveToLocalStorage(newFavoriteList)
     };
     
@@ -194,11 +192,11 @@ function App() {
         favoriteComponent={RemoveFavorites}
         handleFavoritesClick={removeFavoriteWhiskey}
         />
-    </Route>
-    {/* </Switch> */}
-  </div>
-);
+    
+        </Route>
+      {/* </Switch> */}
+    </div>
+  );
 };
-
 
 export default App;

@@ -101,12 +101,12 @@
   ul {
     font-family: 'sansita', italics;
     color: #ef8624;
-    font-size: xx-large;
+    font-size: 1.25rem;
     border: none;
     stroke: none;
     text-decoration: none;
     position: absolute;
-    left: 50px;
+    left: 25px;
     list-style: none;
     -webkit-text-stroke: 2px rgba(150, 73, 2, .35);
   }
@@ -121,14 +121,12 @@
 
   .home {
     position: absolute;
-    font-size: xx-large;
-    left: 20px;
+    left: 15px;
   }
 
   .favs {
     position: absolute;
-    font-size: xx-large;
-    left: 145px;
+    left: 100px;
   }
    
   .dropdown-item {

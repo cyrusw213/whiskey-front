@@ -23,7 +23,7 @@ import Show from './pages/Show'
 import AddFavorite from './components/AddFavorite';
 import Favorite from './pages/Favorite';
 import RemoveFavorites from './components/RemoveFavorites';
-
+// /////////////////////////////////////////////////////////////////////
 
 
 function App() {
@@ -44,8 +44,8 @@ function App() {
     setFavorites(favorites)
   }, [favorites])
 
-  const URL = "https://whiskeywhiskey.herokuapp.com/whiskey/"
-  // const URL = "http://localhost:4000/all"
+  // const URL = "https://whiskeywhiskey.herokuapp.com/whiskey/"
+  const URL = "http://localhost:4000/whiskey"
 
   // request for whiskey json from heroku
 
@@ -58,6 +58,9 @@ function App() {
   // create function to create a new whiskey 
   const createWhiskey = async (createdWhiskey) => {
     // make post request to create whiskey 
+    if (!user) return;
+    const token = await user.getIdToken();
+    console.log(token);
     await fetch(URL, {
       method: 'POST',
       headers: {
@@ -86,103 +89,116 @@ function App() {
 
   useEffect(() => { getWhiskey() }, [])
 
+  useEffect(() => {
+    const userFavorites = JSON.parse(
+      localStorage.getItem('spirit-within-user-favorites')
+    );
+  setFavorites(userFavorites); 
+    }, []);
+
+
+
+  // Save favorites to local storage ///////////////////////
+  const saveToLocalStorage = (items) => {
+    localStorage.setItem('spirit-within-user-favorites', JSON.stringify(items))
+  };
+
+
+
+  // Add and remove Favorites Functions //////////////////////////////////
   const addFavoriteWhiskey = (whiskey) => {
-    if (!user) {
-      alert("You must be logged in to add favorite")
-    } else {
-      // const token = await props.user.getIdToken();
 
-      const newFavoriteList = [...favorites, whiskey];
-      setFavorites(newFavoriteList);
-    }
+    const newFavoriteList = [...favorites, whiskey];
+    setFavorites(newFavoriteList);
+    saveToLocalStorage(newFavoriteList); 
   }
-
+  
   const removeFavoriteWhiskey = (whiskey) => {
     const newFavoriteList = favorites.filter(
       (fav) => fav._id !== whiskey._id
+      
+      );
+      console.log(whiskey._id)
+      setFavorites(newFavoriteList)
+      saveToLocalStorage(newFavoriteList)
+    };
+    
+// ///////////// Components and Routes ////////////////////////////////////////
+    return (
+      <div className="App">
 
-    );
-    console.log(whiskey._id)
-    setFavorites(newFavoriteList)
-  }
-
-
-
-
-  return (
-    <div className="App">
-
-      <Header user={user} />
-      {/* <Switch> */}
-      <Route exact path="/">
-        <Welcome />
-      </Route>
-      <Route path="/bourbon">
-        <Bourbon
-          user={user}
-          favoriteComponent={AddFavorite}
-          url={URL}
-          handleFavoritesClick={addFavoriteWhiskey} />
-      </Route>
-      <Route path="/rye">
-        <Rye
-          user={user}
-          favoriteComponent={AddFavorite}
-          url={URL}
-          handleFavoritesClick={addFavoriteWhiskey} />
-      </Route>
-      <Route path="/american">
-        <American
-          user={user}
-          favoriteComponent={AddFavorite}
-          url={URL}
-          handleFavoritesClick={addFavoriteWhiskey} />
-      </Route>
-      <Route path="/irish">
-        <IrishWhiskey
-          user={user}
-          favoriteComponent={AddFavorite}
-          url={URL}
-          handleFavoritesClick={addFavoriteWhiskey} />
-      </Route>
-      <Route path="/scotch">
-        <Scotch
-          user={user}
-          favoriteComponent={AddFavorite}
-          url={URL}
-          handleFavoritesClick={addFavoriteWhiskey} />
-      </Route>
-      <Route exact path="/whiskey">
-        <Index
-          user={user}
-          whiskey={whiskey}
-          handleFavoritesClick={addFavoriteWhiskey}
-          url={URL}
-          favoriteComponent={AddFavorite} />
-      </Route>
-      <Route path="/whiskey/:id"
-        render={(renderProps) => (
-          <Show
-            favoriteComponent={AddFavorite}
-            user={user}
-            {...renderProps}
-            whiskey={whiskey}
-            updateWhiskey={updateWhiskey}
-            handleFavoritesClick={addFavoriteWhiskey}
-          />
-        )}
-      />
-      <Route path="/favorites">
-        <Favorite
-          whiskey={favorites}
-          user={user}
-          favoriteComponent={RemoveFavorites}
-          handleFavoritesClick={removeFavoriteWhiskey}
+    <Header user={user} />
+    {/* <Switch> */}
+    <Route exact path="/">
+      <Welcome />
+    </Route>
+    <Route path="/bourbon">
+      <Bourbon
+        user={user}
+        favoriteComponent={AddFavorite}
+        url={URL}
+        handleFavoritesClick={addFavoriteWhiskey} />
+    </Route>
+    <Route path="/rye">
+      <Rye
+        user={user}
+        favoriteComponent={AddFavorite}
+        url={URL}
+        handleFavoritesClick={addFavoriteWhiskey} />
+    </Route>
+    <Route path="/american">
+      <American
+        user={user}
+        favoriteComponent={AddFavorite}
+        url={URL}
+        handleFavoritesClick={addFavoriteWhiskey} />
+    </Route>
+    <Route path="/irish">
+      <IrishWhiskey
+        user={user}
+        favoriteComponent={AddFavorite}
+        url={URL}
+        handleFavoritesClick={addFavoriteWhiskey} />
+    </Route>
+    <Route path="/scotch">
+      <Scotch
+        user={user}
+        favoriteComponent={AddFavorite}
+        url={URL}
+        handleFavoritesClick={addFavoriteWhiskey} />
+    </Route>
+    <Route exact path="/whiskey">
+      <Index
+        user={user}
+        whiskey={whiskey}
+        handleFavoritesClick={addFavoriteWhiskey}
+        url={URL}
+        favoriteComponent={AddFavorite} />
+    </Route>
+    <Route path="/whiskey/:id"
+      render={(renderProps) => (
+        <Show
+        favoriteComponent={AddFavorite}
+        user={user}
+        {...renderProps}
+        whiskey={whiskey}
+        updateWhiskey={updateWhiskey}
+        handleFavoritesClick={addFavoriteWhiskey}
         />
-      </Route>
-      {/* </Switch> */}
-    </div>
-  );
+        )}
+        />
+    <Route path="/favorites">
+      <Favorite
+        whiskey={favorites}
+        user={user}
+        favoriteComponent={RemoveFavorites}
+        handleFavoritesClick={removeFavoriteWhiskey}
+        />
+    </Route>
+    {/* </Switch> */}
+  </div>
+);
 };
+
 
 export default App;

@@ -20,13 +20,11 @@ const Header = (props) => {
                         <li onClick={login}><FaPenNib /></li>
                 }
             </ul>
-{
-    props.user ?
+
             <Link to='/favorites'>
                 <div className="favs"><FaHeart /></div>
             </Link>
-            : <></>
-}
+
         </nav>
     );
 };

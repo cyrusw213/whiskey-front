@@ -29,9 +29,13 @@ function Rye(props) {
                 {" "}
                 <h3 className="font"> {rye.Name}</h3>{" "}
               </Link>
-              <div id='favorites-link' onClick={() => props.handleFavoritesClick(whiskey)}>
-                <FavoriteComponent />
-              </div>
+              {
+                props.user
+                  ? <div id='favorites-link' onClick={() => props.handleFavoritesClick(whiskey)}>
+                    <FavoriteComponent />
+                  </div>
+                  : <></>
+              }
             </button>
           </div>
           {/* <h5>${rye.Price}</h5> */}

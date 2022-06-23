@@ -29,9 +29,13 @@ function Bourbon(props) {
             <img src={bourb.Photo} alt={bourb.brand} className="img-bourbon" />
             <button className="link-bourbon">
               <Link to={`/whiskey/${bourb._id}`}>  <h3 className="font"> {bourb.Name}</h3> </Link>
-              <div id='favorites-link' onClick={() => props.handleFavoritesClick(whiskey)}>
-                <FavoriteComponent />
-              </div>
+              {
+                props.user
+                  ? <div id='favorites-link' onClick={() => props.handleFavoritesClick(whiskey)}>
+                    <FavoriteComponent />
+                  </div>
+                  : <></>
+              }
             </button>
           </div>
           {/* <h5>${bourb.Price}</h5> */}

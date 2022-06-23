@@ -9,21 +9,30 @@ const Header = (props) => {
         <nav className="nav">
             <Link to='/'>
                 <div className="home"><FaHome /></div>
-
-            </Link>
-            <ul>
-                {
-                    props.user
-                        //   conditional rendering of login/logout based on user 
-                        ? <li onClick={logout}><FaRegHandSpock /></li>
+                ? <li onClick={logout}>
+                            <span class="hoverLogout" data-hover="Logout">
+                                <FaRegHandSpock />
+                            </span>
+                        </li>
+                        
                         :
-                        <li onClick={login}><FaPenNib /></li>
+                        <li onClick={login}>
+                            <span class="hoverLogin" data-hover="Login">
+                                <FaPenNib />
+                            </span>    
+                        </li>
                 }
+               
             </ul>
-            {props.user ?
-                <Link to='/favorites'>
-                    <div className="favs"><FaHeart /></div>
-                </Link>
+
+            <Link to='/favorites'>
+                <div className="favs">
+                    <span className="favHover" data-hover="Favorites">
+                        <FaHeart />
+                    </span>
+                </div>
+            </Link>
+           
                 : <></>}
         </nav>
     );

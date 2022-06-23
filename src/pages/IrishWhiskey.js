@@ -18,7 +18,7 @@ function IrishWhiskey(props) {
   }, []);
 
   const loaded = () => {
-    const irish = whiskey.filter((drink) => drink.Categories === "American");
+    const irish = whiskey.filter((drink) => drink.Categories === "Irish");
     console.log(irish);
     return (
       <div className="flex-container">

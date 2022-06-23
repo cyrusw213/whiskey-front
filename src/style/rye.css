@@ -7,13 +7,20 @@
     padding: 10%;
 }
 
-/* img-american{
-    width: 100px;
-    height:100px;
-    border: 5px solid black;
-    padding: 5px;    
-} */
+.flex-container div:nth-child(odd) {
+    background-image: url(https://data.whicdn.com/images/344427429/original.gif);
+   background-position: center;
+}
 
+.link-rye{
+    border: solid transparent;
+    background-color: transparent;
+    padding: 25%;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.link-rye:hover {transform: scale(1.5);} 
 /* @media screen and (max-width:1200px){
     .american-stack{
         width: 40%;

@@ -18,8 +18,8 @@ function Rye(props) {
   }, []);
 
   const loaded = () => {
-    const merican = whiskey.filter((drink) => drink.Categories === "Rye");
-    console.log(merican);
+    const rye = whiskey.filter((drink) => drink.Categories === "Rye");
+    console.log(rye);
     return (
       <div className="flex-container">
         {rye.map((rye, index) => (

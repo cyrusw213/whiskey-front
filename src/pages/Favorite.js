@@ -12,6 +12,8 @@ function Favorites(props) {
     console.log(props.whiskey)
 
     return (
+        <div className="flex-container">
+            {
         <div className="favorites">
 
             {props.whiskey.map((whiskey, index) =>
@@ -32,6 +34,7 @@ function Favorites(props) {
 
 
         </div>
+ } </div>
     )
 
 }

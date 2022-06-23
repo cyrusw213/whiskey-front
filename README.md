@@ -11,13 +11,13 @@ This app enables users to browse through the 99 most popular whiskeys ([per Wiki
 * Trevor Faivre - Product Manager, Front-End
 
 ## Visuals
-(https://user-images.githubusercontent.com/103761476/175387186-989a7694-39e3-4301-b211-48353c4b5df8.png)
+![First Image](https://user-images.githubusercontent.com/103761476/175387186-989a7694-39e3-4301-b211-48353c4b5df8.png)
 
-(https://user-images.githubusercontent.com/103761476/175387311-28836a43-433c-4ddf-8fcb-74021dae985d.png)
+![Second Image](https://user-images.githubusercontent.com/103761476/175387311-28836a43-433c-4ddf-8fcb-74021dae985d.png)
 
-(https://user-images.githubusercontent.com/103761476/175387380-08a42eb0-4094-4d6e-86d6-4209d9d08135.png)
+![Third Image](https://user-images.githubusercontent.com/103761476/175387380-08a42eb0-4094-4d6e-86d6-4209d9d08135.png)
 
-(https://user-images.githubusercontent.com/103761476/175387441-4439282d-ce26-492e-a3ff-d4cf7b3688d1.png)
+![Fourth Image](https://user-images.githubusercontent.com/103761476/175387441-4439282d-ce26-492e-a3ff-d4cf7b3688d1.png)
 
 ## Technologies Used
 React, Node, MongoDB, Mongoose, HTML, CSS, JavaScript, NodeJS, Jquery, Bootstrap

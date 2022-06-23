@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 function IrishWhiskey(props) {
   const [whiskey, setWhiskey] = useState(props.whiskey);
-  const FavoriteComponent = props.favoriteComponent;
 
   const getWhiskey = async () => {
     const response = await fetch(props.url);
@@ -20,7 +19,7 @@ function IrishWhiskey(props) {
 
   const loaded = () => {
     const irish = whiskey.filter((drink) => drink.Categories === "Irish");
-    // console.log(irish);
+    console.log(irish);
     return irish.map((irish, index) => (
       <div className="flex-container">
         <div key={index} className={irish.Categories}>
@@ -35,13 +34,6 @@ function IrishWhiskey(props) {
                 {" "}
                 <h3 className="font"> {irish.Name}</h3>{" "}
               </Link>
-              {
-                props.user
-                  ? <div id='favorites-link' onClick={() => props.handleFavoritesClick(whiskey)}>
-                    <FavoriteComponent />
-                  </div>
-                  : <></>
-              }
             </button>
           </div>
 

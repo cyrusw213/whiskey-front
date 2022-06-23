@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react'
 // import ReactDOM from "react-dom"
 import { Link } from 'react-router-dom'
-
  
 function Welcome() {
     const [navLinks, setNavLinks] = useState([]);

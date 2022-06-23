@@ -23,8 +23,7 @@ import Show from './pages/Show'
 import AddFavorite from './components/AddFavorite';
 import Favorite from './pages/Favorite';
 import RemoveFavorites from './components/RemoveFavorites';
-
-
+import AgeVerify from './components/AgeVerify';
 
 function App() {
 

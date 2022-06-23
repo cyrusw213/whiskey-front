@@ -18,23 +18,33 @@ function Rye(props) {
   }, []);
 
   const loaded = () => {
-    const rye = whiskey.filter((drink) => drink.Categories === "Rye");
-    return rye.map((rye, index) => (
+    const merican = whiskey.filter((drink) => drink.Categories === "Rye");
+    console.log(merican);
+    return (
       <div className="flex-container">
-        <div key={index} className={rye.Categories}>
-          <div className="rye-stack">
-            <img src={rye.Photo} alt={rye.brand} className="img-rye" />
-            <button className="link-rye">
-              <Link to={`/whiskey/${rye._id}`}>
+        {rye.map((rye, index) => (
+          <div key={index}>
+            <div className={rye.Categories}>
+              <img
+                src={rye.Photo}
+                alt={rye.brand}
+                className="img-rye"
+              />
+              <div className="link-rye">
                 {" "}
-                <h3 className="font"> {rye.Name}</h3>{" "}
-              </Link>
-            </button>
+                <button>
+                  <Link to={`/whiskey/${rye._id}`}>
+                    {" "}
+                    <h3 className="font"> {rye.Name}</h3>{" "}
+                  </Link>
+                </button>
+              </div>
+            </div>
+            {/* <h5>${rye.Price}</h5> */}
           </div>
-          {/* <h5>${rye.Price}</h5> */}
-        </div>
+        ))}
       </div>
-    ));
+    );
   };
   return whiskey ? loaded() : <h2>Loading...</h2>;
 }

@@ -18,29 +18,33 @@ function IrishWhiskey(props) {
   }, []);
 
   const loaded = () => {
-    const irish = whiskey.filter((drink) => drink.Categories === "Irish");
+    const irish = whiskey.filter((drink) => drink.Categories === "American");
     console.log(irish);
-    return irish.map((irish, index) => (
+    return (
       <div className="flex-container">
-        <div key={index} className={irish.Categories}>
-          <div className="irishwhiskey-stack">
-            <img
-              src={irish.Photo}
-              alt={irish.brand}
-              className="img-irishwhiskey"
-            />
-            <button className="link-irishwhiskey">
-              <Link to={`/whiskey/${irish._id}`}>
+        {irish.map((irish, index) => (
+          <div key={index}>
+            <div className={irish.Categories}>
+              <img
+                src={irish.Photo}
+                alt={irish.brand}
+                className="img-irish"
+              />
+              <div className="link-irish">
                 {" "}
-                <h3 className="font"> {irish.Name}</h3>{" "}
-              </Link>
-            </button>
+                <button>
+                  <Link to={`/whiskey/${irish._id}`}>
+                    {" "}
+                    <h3 className="font"> {irish.Name}</h3>{" "}
+                  </Link>
+                </button>
+              </div>
+            </div>
+            {/* <h5>${irish.Price}</h5> */}
           </div>
-
-          {/* <h5>${irish.Price}</h5> */}
-        </div>
+        ))}
       </div>
-    ));
+    );
   };
   return whiskey ? loaded() : <h2>Loading...</h2>;
 }

@@ -20,19 +20,31 @@ function American(props) {
   const loaded = () => {
     const merican = whiskey.filter((drink) => drink.Categories === "American");
     console.log(merican);
-    return merican.map((merican, index) => (
-      <div key={index} className="flex-container">
-        <div  className={merican.Categories}>
-          <div  className="american-stack">
-          <img src={merican.Photo} alt={merican.brand} className="img-american"/>
-          <button className="link-american">
-          <Link to={`/whiskey/${merican._id}`}> {" "} <h3 className="font"> {merican.Name}</h3>{" "} </Link>
-          </button>
+    return (
+      <div className="flex-container">
+        {merican.map((merican, index) => (
+          <div key={index}>
+            <div className={merican.Categories}>
+              <img
+                src={merican.Photo}
+                alt={merican.brand}
+                className="img-american"
+              />
+              <div className="link-american">
+                {" "}
+                <button>
+                  <Link to={`/whiskey/${merican._id}`}>
+                    {" "}
+                    <h3 className="font"> {merican.Name}</h3>{" "}
+                  </Link>
+                </button>
+              </div>
+            </div>
+            {/* <h5>${merican.Price}</h5> */}
           </div>
-          {/* <h5>${merican.Price}</h5> */}
-        </div>
+        ))}
       </div>
-    ));
+    );
   };
   return whiskey ? loaded() : <h2>Loading...</h2>;
 }

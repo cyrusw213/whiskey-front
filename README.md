@@ -27,7 +27,11 @@ React, Node, MongoDB, Mongoose, HTML, CSS, JavaScript, NodeJS, Jquery, Bootstrap
 
 ## Future Enhancements
 * ability to add new whiskeys that are not already included
-* ability
+* about page
+* ability to filter whiskeys by price
+* ability to filter whiskeys by rating
+* add favorited whiskeys to localstorage
+* ability to mark whiskeys that the user wants to try
 
 ## References
 * [React Movie App](https://www.youtube.com/watch?v=jc9_Bqzy2YQ&t=2249s)

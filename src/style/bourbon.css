@@ -1,4 +1,3 @@
-
 .flex-container{
     display:flex;
     flex-wrap: wrap;
@@ -6,30 +5,23 @@
     align-items: center;
     align-content: space-between;
     padding: 10%;
- 
 }
-
-.flex-container div:nth-child(even) {
+.flex-container div:nth-child(odd) {
     background-image: url(https://data.whicdn.com/images/344427430/original.gif);
-    background-position: center;
-   /* max-height: 500px;
-   max-width: 500px; */
-   margin-bottom: 18%;
-
+   background-position: center;
 }
 
-.link-bourb{
+.link-bourbon{
     border: solid transparent;
     background-color: transparent;
     padding: 25%;
     font-size: 10px;
     cursor: pointer;
-    border-radius:3px;
 }
 
-.link-bourb:hover {transform: scale(1.5);} 
+.link-bourbon:hover {transform: scale(1.5);}
 
-.img-bourb{
+.img-index{
     max-width: 300px;
     max-height: 420px;
    border-radius: 6px;

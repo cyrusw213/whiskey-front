@@ -20,8 +20,10 @@ function American(props) {
   const loaded = () => {
     const merican = whiskey.filter((drink) => drink.Categories === "American");
     console.log(merican);
-    return merican.map((merican, index) => (
-      <div key={index} className="flex-container">
+    return (
+    <div className="flex-container">
+      {merican.map((merican, index) => (
+      <div key={index} >
         <div className={merican.Categories}>
           <div className="american-stack">
             <img src={merican.Photo} alt={merican.brand} className="img-american" />
@@ -39,7 +41,10 @@ function American(props) {
           {/* <h5>${merican.Price}</h5> */}
         </div>
       </div>
-    ));
+    ))
+
+      }
+    </div>)
   };
   return whiskey ? loaded() : <h2>Loading...</h2>;
 }

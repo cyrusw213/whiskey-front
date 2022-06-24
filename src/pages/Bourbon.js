@@ -21,8 +21,9 @@ function Bourbon(props) {
 
     const bourb = whiskey.filter(drink => drink.Categories === "Bourbon")
 
-    return bourb.map((bourb, index) => (
-      <div className="flex-container">
+    return (
+    <div className="flex-container">
+      {bourb.map((bourb, index) => (
         <div key={index} className={bourb.Categories}>
           {/* <h1>Bourbons</h1> */}
           <div className="bourbon-stack">
@@ -39,11 +40,12 @@ function Bourbon(props) {
             </button>
           </div>
           {/* <h5>${bourb.Price}</h5> */}
-          {/* {test Hervs Udate} */}
         </div>
-      </div>
+   
     ))
-  };git 
+      }
+    </div>)
+  };
   return whiskey ? loaded() : <h2>Loading...</h2>
 
 }; 

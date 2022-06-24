@@ -13,7 +13,7 @@
    margin-bottom:18%;
 }
 
-.link-irish{
+.link-irishwhiskey{
     border: solid transparent;
     background-color: transparent;
     padding: 25%;
@@ -22,7 +22,7 @@
     border-radius:3px;
 }
 
-.link-irish:hover {transform: scale(1.5);} 
+.link-irishwhiskey:hover {transform: scale(1.5);} 
 
 .img-index{
     max-width: 300px;

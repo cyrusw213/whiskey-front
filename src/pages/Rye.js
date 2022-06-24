@@ -19,8 +19,10 @@ function Rye(props) {
 
   const loaded = () => {
     const rye = whiskey.filter((drink) => drink.Categories === "Rye");
-    return rye.map((rye, index) => (
-      <div className="flex-container">
+    return (
+    <div className="flex-container">
+      {
+        rye.map((rye, index) => (
         <div key={index} className={rye.Categories}>
           <div className="rye-stack">
             <img src={rye.Photo} alt={rye.brand} className="img-rye" />
@@ -40,8 +42,10 @@ function Rye(props) {
           </div>
           {/* <h5>${rye.Price}</h5> */}
         </div>
-      </div>
-    ));
+
+    ))
+      }
+    </div>)
   };
   return whiskey ? loaded() : <h2>Loading...</h2>;
 }

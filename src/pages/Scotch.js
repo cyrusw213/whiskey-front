@@ -20,29 +20,34 @@ function Scotch(props) {
   const loaded = () => {
     const scotch = whiskey.filter((drink) => drink.Categories === "Scotch");
     console.log(scotch);
-    return scotch.map((scotch, index) => (
-      <div className="flex-container">
-        <div key={index} className={scotch.Categories}>
-          <div className="scotch-stack">
-            <img src={scotch.Photo} alt={scotch.brand} className="img-scotch" />
-            <button className="link-scotch">
-              <Link to={`/whiskey/${scotch._id}`}>
-                {" "}
-                <h3 className="font"> {scotch.Name}</h3>{" "}
-              </Link>
-              {
-                props.user
-                  ? <div id='favorites-link' onClick={() => props.handleFavoritesClick(whiskey)}>
-                    <FavoriteComponent />
-                  </div>
-                  : <></>
-              }
-            </button>
+    return (<div className="flex-container">
+      {
+        scotch.map((scotch, index) => (
+     
+          <div key={index} className={scotch.Categories}>
+            <div className="scotch-stack">
+              <img src={scotch.Photo} alt={scotch.brand} className="img-scotch" />
+              <button className="link-scotch">
+                <Link to={`/whiskey/${scotch._id}`}>
+                  {" "}
+                  <h3 className="font"> {scotch.Name}</h3>{" "}
+                </Link>
+                {
+                  props.user
+                    ? <div id='favorites-link' onClick={() => props.handleFavoritesClick(whiskey)}>
+                      <FavoriteComponent />
+                    </div>
+                    : <></>
+                }
+              </button>
+            </div>
+            {/* <h5>${scotch.Price}</h5> */}
           </div>
-          {/* <h5>${scotch.Price}</h5> */}
-        </div>
-      </div>
-    ));
+        
+      ))
+      }
+    </div>
+      )
   };
   return whiskey ? loaded() : <h2>Loading...</h2>;
 }

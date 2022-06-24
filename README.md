@@ -34,6 +34,7 @@ React, Node, MongoDB, Mongoose, HTML, CSS, JavaScript, NodeJS, Jquery, Bootstrap
 * ability to filter whiskeys by rating
 * add favorited whiskeys to localstorage
 * ability to mark whiskeys that the user wants to try
+* age verification
 
 ## References
 * [React Movie App](https://www.youtube.com/watch?v=jc9_Bqzy2YQ&t=2249s)

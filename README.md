@@ -15,7 +15,7 @@ This app enables users to browse through the 99 most popular whiskeys ([per Wiki
 
 ![Second Image](https://user-images.githubusercontent.com/103761476/175387311-28836a43-433c-4ddf-8fcb-74021dae985d.png)
 
-![Third Image](https://user-images.githubusercontent.com/103761476/175387380-08a42eb0-4094-4d6e-86d6-4209d9d08135.png)
+![image](https://user-images.githubusercontent.com/103761476/175546009-6b8a42ca-f927-4b54-8b10-4f21921bbe92.png)
 
 ![Fourth Image](https://user-images.githubusercontent.com/103761476/175387441-4439282d-ce26-492e-a3ff-d4cf7b3688d1.png)
 

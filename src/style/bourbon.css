@@ -1,59 +1,56 @@
-/* .flex-container{
-    display: inline-grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto auto;
-    grid-auto-flow: row;
-    padding: 7%;
-    border: 2px solid transparent;
-} */
 
-/* .bourbon-stack{
-    border: 5px solid transparent;
-} */
-.flex-container div{
-    
-    width: var(--s);
-    background-image: url(https://data.whicdn.com/images/344427429/original.gif);
-    background-position: center;
-    margin:var(--m);
-    height: calc(var(--s)*1.1547);
-    display: flexbox;
-    font-size:initial;
-    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%,100% 25%, 50% 0%);
-    background: red;
-    margin-bottom: calc(var(--m) - var(--s)*0.2885);
- }
-
- .flex-container div:nth-child(odd) {
-     background-image: url(https://data.whicdn.com/images/344427429/original.gif);
-    background-position: center;
- }
-
- .flex-container::before{
-     content: "";
-     width: calc(var(--s)/2 + var(--m));
-     float: left;
-     height: 120%;
-     shape-outside: repeating-linear-gradient(
-         #0000 0 cal(var(--f) - 3px),
-         #000 0 var(---f));
- }
-
-.img-bourbon{
-    width: 300px; 
-    height: 500px;
-}
-.font{ 
-    font-size: small;
-    -webkit-text-stroke: 3px rgba(242, 122, 9, 0.55);
+.flex-container{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: center;
+    align-content: space-between;
+    padding: 10%;
+ 
 }
 
-.link-bourbon{
+.flex-container div:nth-child(even) {
+    background-image: url(https://data.whicdn.com/images/344427430/original.gif);
+    background-position: center;
+   /* max-height: 500px;
+   max-width: 500px; */
+   margin-bottom: 18%;
+
+}
+
+.link-bourb{
     border: solid transparent;
     background-color: transparent;
     padding: 25%;
     font-size: 10px;
     cursor: pointer;
+    border-radius:3px;
 }
 
-.link-bourbon:hover {transform: scale(1.5);} 
+.link-bourb:hover {transform: scale(1.5);} 
+
+.img-bourb{
+    max-width: 300px;
+    max-height: 420px;
+   border-radius: 6px;
+
+}
+
+/* @media screen and (max-width:1200px){
+    .american-stack{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .american-stack{
+        width: 40%;
+    }
+} */
+
+.font{ 
+    font-size: small;
+    -webkit-text-stroke: 3px rgba(242, 122, 9, 0.55);
+}
+
+ 
